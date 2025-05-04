@@ -13,41 +13,126 @@
       font-family: 'Cairo', sans-serif;
       color: #fff;
     }
+
     header {
-      background: transparent;
+      background: #000;
       padding: 20px;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
+
+    .shiny-text {
+      display: inline-block;
       font-size: 36px;
       color: white;
       position: relative;
-      display: inline-block;
-      background: linear-gradient(135deg, rgba(255,255,255,0.2) 0%, rgba(255,255,255,1) 50%, rgba(255,255,255,0.2) 100%);
-      background-size: 200% 100%;
+      overflow: hidden;
+      background: linear-gradient(
+        135deg,
+        #ffffff 0%,
+        #ffffff 30%,
+        #00aaff 50%,
+        #ffffff 70%,
+        #ffffff 100%
+      );
+      background-size: 200% 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: shine 3s infinite linear;
+      animation: shine 3s linear infinite;
     }
+
     @keyframes shine {
       0% {
-        background-position: 200% 0%;
+        background-position: -100% -100%;
       }
       100% {
-        background-position: -200% 0%;
+        background-position: 200% 200%;
       }
     }
+
     header p {
       margin: 5px 0 0;
       font-size: 13px;
       color: #e0e0e0;
     }
+
+    nav {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      border-bottom: 2px solid #0056b3;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    section#news {
+      padding: 40px 20px;
+    }
+
+    section#news h2 {
+      text-align: center;
+      font-size: 30px;
+      color: #00aaff;
+      margin-bottom: 40px;
+    }
+
+    .news-container {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .news-card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+
+    .news-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+
+    .news-card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: #fff;
+    }
+
+    .news-card p {
+      font-size: 15px;
+      color: #ccc;
+      margin: 5px 0;
+    }
+
+    .news-date {
+      font-size: 14px;
+      color: #00aaff;
+    }
+
+    .news-date strong {
+      color: #ccc;
+    }
   </style>
 </head>
 <body>
   <header>
-    <h1>شبكة رؤية</h1>
+    <h1 class="shiny-text">شبكة رؤية</h1>
     <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
   </header>
 
