@@ -2,7 +2,7 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>شبكة رؤية - الأخبارية</title>
+  <title>شبكة رؤية - تواصل معنا</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
@@ -21,28 +21,17 @@
     .shine-text {
       font-size: 36px;
       font-weight: bold;
-      color: #fff;
-      position: relative;
-      display: inline-block;
       background: linear-gradient(to left, #0056b3, #003366);
       background-size: 200% auto;
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
-      -webkit-text-fill-color: transparent;
       animation: shine 2s linear infinite;
-      animation-delay: 0s;
     }
-
     @keyframes shine {
-      0% {
-        background-position: -200% 0;
-      }
-      100% {
-        background-position: 200% 0;
-      }
+      0% { background-position: -200% 0; }
+      100% { background-position: 200% 0; }
     }
-
     header p {
       margin: 5px 0 0;
       font-size: 13px;
@@ -64,32 +53,25 @@
     nav a:hover {
       color: #00aaff;
     }
-  </style>
-</head>
-<body>
-  <header>
-    <h1 class="shine-text">شبكة رؤية</h1>
-    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
-  </header>
 
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="thinking.html">أخبار اليمن</a>
-    <a href="thought.html">لحظة تفكير</a>
-    <a href="contact.html">تواصل معنا</a>
-  </nav>
-
-  <section id="news">
-    <h2>تواصل معنا</h2>
-    <div class="news-container">
-      <div class="news-card">
-        <h3>بوت تيليجرام:</h3>
-        <p>يمكنك أن تساعد شبكة رؤية في نشر الأخبار.</p>
-        <h3>تابع رؤية على التيليجرام:</h3>
-        <p>توصلها جميع الأخبار </p>
-        
-      </div>
-    </div>
-  </section>
-</body>
-</html>
+    /* تنسيقات القسم */
+    section#news {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .news-container {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+      color: #ccc;
+    }
+    .news-card h3 {
+      margin: 0 0 8px;
+      font-size: 18px;
+      color: #fff;
+    }
+    .news-card p {
+      margin: 0 0 12px;
+      line-height: 1.6;
