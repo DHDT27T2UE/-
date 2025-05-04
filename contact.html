@@ -19,9 +19,32 @@
       text-align: center;
     }
     header h1 {
+      position: relative;
       margin: 0;
       font-size: 36px;
       color: #fff;
+      display: inline-block;
+      overflow: hidden;
+    }
+    header h1::after {
+      content: '';
+      position: absolute;
+      top: -100%;
+      left: -100%;
+      width: 200%;
+      height: 300%;
+      background: linear-gradient(135deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+      animation: shine 3s linear infinite;
+    }
+    @keyframes shine {
+      0% {
+        top: -100%;
+        left: -100%;
+      }
+      100% {
+        top: 100%;
+        left: 100%;
+      }
     }
     header p {
       margin: 5px 0 0;
@@ -82,13 +105,9 @@
       font-size: 15px;
       color: #ccc;
       margin: 5px 0;
-    <head>
-  <style>
-    h1 {
-      font-size: 150%;
     }
-    p {
-      font-size: 10%;
+    .news-date {
+      font-size: 14px;
       color: #00aaff;
     }
     .news-date strong {
@@ -99,7 +118,7 @@
 <body>
   <header>
     <h1>شبكة رؤية</h1>
-    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة لمصادر إعلامية موثوقة ومتعددة.</p>
+    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
   </header>
 
   <nav>
