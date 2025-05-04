@@ -53,8 +53,6 @@
     nav a:hover {
       color: #00aaff;
     }
-
-    /* تنسيقات القسم */
     section#news {
       padding: 40px 20px;
       max-width: 800px;
@@ -75,3 +73,64 @@
     .news-card p {
       margin: 0 0 12px;
       line-height: 1.6;
+    }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+      margin: 30px 0;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    .video-caption {
+      text-align: center;
+      font-size: 18px;
+      color: #eee;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="shine-text">شبكة رؤية</h1>
+    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
+  </header>
+
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="thinking.html">أخبار اليمن</a>
+    <a href="thought.html">لحظة تفكير</a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
+
+  <section id="news">
+    <h2>تواصل معنا</h2>
+    <div class="news-container news-card">
+      <h3>بوت تيليجرام:</h3>
+      <p>يمكنك أن تساعد شبكة رؤية في نشر الأخبار.</p>
+      <h3>تابع رؤية على التيليجرام:</h3>
+      <p>توصلها جميع الأخبار 📢</p>
+    </div>
+
+    <div class="video-container">
+      <iframe
+        src="https://drive.google.com/file/d/1-UDasWKENKWNTeAUqOWOX8XlUzlc45N1/preview"
+        allow="autoplay; encrypted-media"
+        allowfullscreen>
+      </iframe>
+    </div>
+    <p class="video-caption">أيّ شيّ ببالك</p>
+
+  </section>
+
+</body>
+</html>
