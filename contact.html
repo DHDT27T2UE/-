@@ -15,22 +15,23 @@
     }
 
     header {
-      background: #000;
+      background-color: #000;
       padding: 20px;
       text-align: center;
     }
 
-    .shiny-text {
-      display: inline-block;
+    header h1 {
+      margin: 0;
       font-size: 36px;
-      font-weight: bold;
-      position: relative;
       color: white;
-      background: linear-gradient(to right, white 20%, #00aaff 50%, white 80%);
+      position: relative;
+      background: linear-gradient(120deg, #ffffff 0%, #ffffff 40%, #00ccff 50%, #ffffff 60%, #ffffff 100%);
       background-size: 200% auto;
+      background-clip: text;
       -webkit-background-clip: text;
+      color: transparent;
       -webkit-text-fill-color: transparent;
-      animation: shine 4s ease-in-out infinite;
+      animation: shine 6s ease-in-out infinite;
     }
 
     @keyframes shine {
@@ -128,7 +129,7 @@
 </head>
 <body>
   <header>
-    <h1 class="shiny-text">شبكة رؤية</h1>
+    <h1>شبكة رؤية</h1>
     <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
   </header>
 
