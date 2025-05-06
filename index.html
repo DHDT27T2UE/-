@@ -239,7 +239,7 @@
         <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
         <p class="news-date"> <strong>2 مايو 2025</strong></p>
       </div>
-<div id="yemen-clock" style="font-size: 18px; color: #00ffcc; margin-top: 20px;"></div>
+<div id="yemen-clock" style="font-size: 18px; color: #0099ff; margin-top: 20px;"></div>
 
 <script>
   function updateYemenTime() {
@@ -247,10 +247,15 @@
     const yemenOffset = 3 * 60; // GMT+3
     const utc = now.getTime() + (now.getTimezoneOffset() * 60000);
     const yemenTime = new Date(utc + (yemenOffset * 60000));
-    const hours = yemenTime.getHours().toString().padStart(2, '0');
+
+    let hours = yemenTime.getHours();
     const minutes = yemenTime.getMinutes().toString().padStart(2, '0');
     const seconds = yemenTime.getSeconds().toString().padStart(2, '0');
-    document.getElementById('yemen-clock').innerHTML = `الساعة الآن في اليمن: ${hours}:${minutes}:${seconds}`;
+    const ampm = hours >= 12 ? 'مساءً' : 'صباحًا';
+    hours = hours % 12 || 12;
+
+    document.getElementById('yemen-clock').innerHTML =
+      `الساعة الآن في اليمن: ${hours}:${minutes}:${seconds} ${ampm}`;
   }
 
   setInterval(updateYemenTime, 1000);
