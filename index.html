@@ -123,7 +123,64 @@
     <a href="thought.html">لحظة تفكير</a>
     <a href="contact.html">تواصل معنا</a>
   </nav>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>أحدث أخبار اليمن</title>
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #fff;
+      font-family: 'Cairo', sans-serif;
+      padding: 20px;
+    }
+    h2 {
+      color: #00aaff;
+    }
+    .news-item {
+      background-color: #1a1a1a;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-right: 4px solid #00aaff;
+    }
+    .news-item a {
+      color: #00aaff;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
 
+  <h2>أحدث أخبار اليمن</h2>
+  <div id="news-container">جاري تحميل الأخبار...</div>
+
+  <script>
+    const container = document.getElementById('news-container');
+    const rssUrl = 'https://www.aljazeera.net/xml/rss/all.xml';
+    const apiUrl = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssUrl)}`;
+
+    fetch(apiUrl)
+      .then(response => response.json())
+      .then(data => {
+        container.innerHTML = '';
+        data.items
+          .filter(item => item.title.includes('اليمن'))
+          .slice(0, 5)
+          .forEach(item => {
+            const div = document.createElement('div');
+            div.className = 'news-item';
+            div.innerHTML = `<strong>${item.title}</strong><br><a href="${item.link}" target="_blank">اقرأ المزيد</a>`;
+            container.appendChild(div);
+          });
+      })
+      .catch(() => {
+        container.innerHTML = 'فشل في تحميل الأخبار.';
+      });
+  </script>
+
+</body>
+</html>
   <section id="news">
     <h2>آخر الأخبار</h2>
     <div class="news-container">
