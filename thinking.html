@@ -20,20 +20,34 @@
       text-align: center;
     }
 
-    .aurora-text {
+    .shine-text {
+      position: relative;
+      display: inline-block;
       font-size: 42px;
       font-weight: bold;
-      background: linear-gradient(135deg, #ffffff, #00ffff, #0047ab, #ffffff);
-      background-size: 400% 400%;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      animation: aurora 6s ease infinite;
+      color: white;
+      overflow: hidden;
     }
 
-    @keyframes aurora {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    .shine-text::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      height: 100%;
+      width: 100%;
+      background: linear-gradient(
+        120deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(0, 255, 255, 0.6) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shine 3s linear infinite;
+    }
+
+    @keyframes shine {
+      0% { left: -100%; }
+      100% { left: 100%; }
     }
 
     header p {
@@ -84,7 +98,7 @@
 <body>
 
   <header>
-    <h1 class="aurora-text">شبكة رؤية</h1>
+    <h1 class="shine-text">شبكة رؤية</h1>
     <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
   </header>
 
@@ -97,7 +111,7 @@
 
   <section id="vision">
     <h2>صفحة خاصة</h2>
-    <p>هذا القسم يمكنك استخدامه لعرض فكرة أو محتوى جديد ضمن تصميم موقع شبكة رؤية. تأثير Aurora يظهر فقط على الاسم في الأعلى.</p>
+    <p>هذا القسم يعرض تأثير لمعة سماوية على عنوان "شبكة رؤية" مع الحفاظ على الهوية البصرية للموقع.</p>
   </section>
 
 </body>
