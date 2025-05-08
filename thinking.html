@@ -2,9 +2,9 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>شبكة رؤية - الأخبارية</title>
+  <title>شبكة رؤية</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
       margin: 0;
@@ -20,13 +20,8 @@
     }
     header h1 {
       margin: 0;
-      font-size: 36px;
+      font-size: 40px;
       color: #fff;
-    }
-    header p {
-      margin: 5px 0 0;
-      font-size: 13px;
-      color: #e0e0e0;
     }
     nav {
       background: #1a1a1a;
@@ -44,34 +39,17 @@
     nav a:hover {
       color: #00aaff;
     }
-    section#news {
+    section {
       padding: 40px 20px;
-    }
-    section#news h2 {
-      text-align: center;
-      font-size: 30px;
-      color: #00aaff;
-      margin-bottom: 40px;
-    }
-    .news-container {
-      max-width: 900px;
+      max-width: 800px;
       margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
     }
     .news-card {
       background: #1c1c1c;
       padding: 20px;
       border-radius: 12px;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-    .news-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-      margin-bottom: 15px;
+      margin-bottom: 30px;
     }
     .news-card h3 {
       margin: 0 0 10px;
@@ -90,12 +68,27 @@
     .news-date strong {
       color: #ccc;
     }
+    .video-container {
+      position: relative;
+      padding-bottom: 56.25%;
+      height: 0;
+      overflow: hidden;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+    .video-container iframe {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>شبكة رؤية</h1>
-    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم  محتواها بناءً على متابعة لمصادر إعلامية موثوقة ومتعددة.</p>
   </header>
 
   <nav>
@@ -104,66 +97,20 @@
     <a href="thought.html">لحظة تفكير</a>
     <a href="contact.html">تواصل معنا</a>
   </nav>
-  <section id="news">
-    <h2> أخبار اليمن</h2>
-    <div class="news-container">
-      <div class="news-card">
-        <h3>مجلس القيادة يطيح برئيس الحكومة</h3>
-        <p>أعلن مجلس القيادة الرئاسي عن إقامة الحكومة أحمد بن مبارك وتعيين سالم بن بريك خلفًا له.</p>
-        <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
-      </div>
 
-<div class="video-container">
-  <iframe
-    src="https://drive.google.com/file/d/106JjH__qLn0LOmkKo_9a0BO0wT_fn28A/preview"
-    allow="autoplay; encrypted-media">
-  </iframe>
-</div>
-<p class="news-date">ايعدم علي مرفد - <strong>اليوم</strong></p>
-
-      <div class="news-card">
-        <h3>غارات أمريكية عنيفة على صنعاء</h3>
-        <p>استقالة الرئيس المؤقت ورئيس الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
-        <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
+  <section>
+    <div class="news-card">
+      <div class="video-container">
+        <iframe
+          src="https://drive.google.com/file/d/106JjH__qLn0LOmkKo_9a0BO0wT_fn28A/preview"
+          allow="autoplay; encrypted-media">
+        </iframe>
       </div>
-
-      <div class="news-card">
-        <h3>ترامب يهاجم بايدن ويتنصل من مسؤولية الركود</h3>
-        <p>ترامب يلقي باللوم على بايدن في انكماش الاقتصاد الأمريكي بنسبة 0.3%، متجاهلاً تأثير سياساته التجارية السابقة على الأسواق.</p>
-        <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <h3>"ديدي" في وجه العاصفة: اتهامات تهز صناعة الموسيقى</h3>
-        <p>شون "ديدي" كومبس يواجه تحقيقات واسعة بتهم تتعلق بالاتجار الجنسي وسوء السلوك، في قضية تهز أركان صناعة الموسيقى الأمريكية.</p>
-        <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <h3>مسيرات عيد العمال تملأ الشوارع... ومواجهات في إسطنبول</h3>
-        <p>من باريس إلى طوكيو، شهدت مدن العالم مظاهرات حاشدة بمناسبة عيد العمال، بينما وقعت مواجهات مع الشرطة في إسطنبول أدت إلى اعتقالات.</p>
-        <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <h3>واشنطن وكييف... معادن استراتيجية وشراكة أعمق</h3>
-        <p>وقعت الولايات المتحدة وأوكرانيا اتفاقية لتصدير المعادن الاستراتيجية، ما يعزز الشراكة الاقتصادية بين البلدين في مواجهة التحديات الجيوسياسية.</p>
-        <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <h3>وول ستريت تزدهر مع موجة الذكاء الاصطناعي</h3>
-        <p>ارتفعت مؤشرات الأسهم الأمريكية بدعم من موجة تفاؤل واسعة حول الذكاء الاصطناعي، ونتائج مالية قوية لشركات التقنية الكبرى.</p>
-        <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/024QDbyT/gulfnews-2025-04-29-uem6hwtp-Behavioural-Exchange.jpg" alt="مؤتمر العلوم السلوكية في أبوظبي">
-        <h3>أبوظبي تطلق شبكة عالمية للعلوم السلوكية</h3>
-        <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
-        <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
-      </div>
+      <h3>هل كان يستحق الإعدام؟</h3>
+      <p>يوثق الفيديو لحظة تنفيذ حكم الإعدام بحق علي مرفد... مشهد يتكرر: هل هو عدالة أم قسوة؟</p>
+      <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
     </div>
   </section>
+
 </body>
 </html>
