@@ -7,53 +7,44 @@
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
   <style>
     body {
+      background: #0f0f0f;
+      color: white;
+      font-family: 'Cairo', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #0f0f0f;
-      font-family: 'Cairo', sans-serif;
-      color: #fff;
     }
 
     header {
-      background: linear-gradient(to left, #0056b3, #003366);
-      padding: 20px;
       text-align: center;
+      padding: 60px 20px;
+      background: linear-gradient(to left, #0056b3, #003366);
     }
 
-    .shine-text {
-      position: relative;
-      display: inline-block;
-      font-size: 42px;
+    .glow-text {
+      font-size: 44px;
       font-weight: bold;
+      position: relative;
       color: white;
+    }
+
+    .glow-text::before {
+      content: attr(data-text);
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: cyan;
+      filter: blur(2px);
+      opacity: 0;
+      animation: shimmer 3s infinite;
+      white-space: nowrap;
       overflow: hidden;
     }
 
-    .shine-text::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      height: 100%;
-      width: 100%;
-      background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0) 0%,
-        rgba(0, 255, 255, 0.6) 50%,
-        rgba(255, 255, 255, 0) 100%
-      );
-      animation: shine 3s linear infinite;
-    }
-
-    @keyframes shine {
-      0% { left: -100%; }
-      100% { left: 100%; }
-    }
-
-    header p {
-      margin: 5px 0 0;
-      font-size: 14px;
-      color: #e0e0e0;
+    @keyframes shimmer {
+      0%   { opacity: 0; clip-path: inset(0 100% 0 0); }
+      50%  { opacity: 1; clip-path: inset(0 0 0 0); }
+      100% { opacity: 0; clip-path: inset(0 0 0 100%); }
     }
 
     nav {
@@ -75,31 +66,24 @@
       color: #00aaff;
     }
 
-    section#vision {
-      padding: 80px 20px;
+    section {
+      padding: 60px 20px;
       text-align: center;
     }
 
-    section#vision h2 {
-      font-size: 32px;
-      color: #00aaff;
-      margin-bottom: 20px;
-    }
-
-    section#vision p {
-      font-size: 18px;
+    section p {
       color: #ccc;
+      font-size: 18px;
       max-width: 700px;
       margin: auto;
-      line-height: 1.8;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1 class="shine-text">شبكة رؤية</h1>
-    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
+    <h1 class="glow-text" data-text="شبكة رؤية">شبكة رؤية</h1>
+    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة.</p>
   </header>
 
   <nav>
@@ -109,9 +93,9 @@
     <a href="contact.html">تواصل معنا</a>
   </nav>
 
-  <section id="vision">
+  <section>
     <h2>صفحة خاصة</h2>
-    <p>هذا القسم يعرض تأثير لمعة سماوية على عنوان "شبكة رؤية" مع الحفاظ على الهوية البصرية للموقع.</p>
+    <p>تأثير اللمعة يمر على حروف "شبكة رؤية" نفسها بشكل دقيق ومميز، كما طلبت بالضبط.</p>
   </section>
 
 </body>
