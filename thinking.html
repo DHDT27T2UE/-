@@ -18,11 +18,28 @@
       padding: 20px;
       text-align: center;
     }
-    header h1 {
-      margin: 0;
-      font-size: 40px;
-      color: #fff;
+    .aurora-text {
+      font-size: 42px;
+      font-weight: bold;
+      background: linear-gradient(135deg, #00ffff, #0047ab, #00ffff);
+      background-size: 400% 400%;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: aurora 6s ease infinite;
     }
+
+    @keyframes aurora {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    header p {
+      margin: 5px 0 0;
+      font-size: 13px;
+      color: #e0e0e0;
+    }
+
     nav {
       background: #1a1a1a;
       display: flex;
@@ -39,77 +56,42 @@
     nav a:hover {
       color: #00aaff;
     }
-    section {
-      padding: 40px 20px;
-      max-width: 800px;
+
+    section#vision {
+      padding: 100px 20px;
+      text-align: center;
+    }
+
+    section#vision h2 {
+      font-size: 40px;
+      margin-bottom: 20px;
+    }
+
+    section#vision p {
+      font-size: 18px;
+      color: #ccc;
+      max-width: 700px;
       margin: auto;
-    }
-    .news-card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-      margin-bottom: 30px;
-    }
-    .news-card h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
-      color: #fff;
-    }
-    .news-card p {
-      font-size: 15px;
-      color: #ccc;
-      margin: 5px 0;
-    }
-    .news-date {
-      font-size: 14px;
-      color: #00aaff;
-    }
-    .news-date strong {
-      color: #ccc;
-    }
-    .video-container {
-      position: relative;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 8px;
-      margin-bottom: 15px;
-    }
-    .video-container iframe {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>شبكة رؤية</h1>
+    <h1 class="aurora-text">شبكة رؤية</h1>
+    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
   </header>
 
   <nav>
     <a href="index.html">الرئيسية</a>
-    <a href="thinking.html">أخبار اليمن</a>
+    <a href="yemen.html">أخبار اليمن</a>
     <a href="thought.html">لحظة تفكير</a>
     <a href="contact.html">تواصل معنا</a>
   </nav>
 
-  <section>
-    <div class="news-card">
-      <div class="video-container">
-        <iframe
-          src="https://drive.google.com/file/d/106JjH__qLn0LOmkKo_9a0BO0wT_fn28A/preview"
-          allow="autoplay; encrypted-media">
-        </iframe>
-      </div>
-      <h3>هل كان يستحق الإعدام؟</h3>
-      <p>يوثق الفيديو لحظة تنفيذ حكم الإعدام بحق علي مرفد... مشهد يتكرر: هل هو عدالة أم قسوة؟</p>
-      <p class="news-date">اليوم - <strong>2 مايو 2025</strong></p>
-    </div>
+  <section id="vision">
+    <h2>شبكة رؤية</h2>
+    <p>هذه الصفحة تعرض تأثير Aurora الجميل على عنوان شبكة رؤية، وتُستخدم كجزء من هوية الموقع البصرية الجذابة.</p>
   </section>
 
 </body>
