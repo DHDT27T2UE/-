@@ -24,7 +24,7 @@
       font-size: 44px;
       font-weight: bold;
       position: relative;
-      color: white;
+      color: #007BFF; /* الخط الأساسي أزرق */
     }
 
     .glow-text::before {
@@ -33,17 +33,18 @@
       top: 0;
       left: 0;
       width: 100%;
-      color:  #002244;
-      filter: blur(5px);
+      color: #ffffff; 
+      filter: blur(8px);
       opacity: 0;
-      animation: shimmer 5s infinite;
+      animation: shimmer 6s ease-in-out infinite;
       white-space: nowrap;
       overflow: hidden;
     }
 
     @keyframes shimmer {
       0%   { opacity: 0; clip-path: inset(0 100% 0 0); }
-      50%  { opacity: 1; clip-path: inset(0 0 0 0); }
+      30%  { opacity: 1; clip-path: inset(0 66% 0 0); }
+      70%  { opacity: 1; clip-path: inset(0 0 0 33%); }
       100% { opacity: 0; clip-path: inset(0 0 0 100%); }
     }
 
@@ -95,7 +96,7 @@
 
   <section>
     <h2>صفحة خاصة</h2>
-    <p>تأثير اللمعة يمر على حروف "شبكة رؤية" نفسها بشكل دقيق ومميز، كما طلبت بالضبط.</p>
+    <p>تم عكس الألوان: الخط أزرق واللمعة بيضاء ناعمة تمر فوقه بانسيابية.</p>
   </section>
 
 </body>
