@@ -24,28 +24,17 @@
       font-size: 44px;
       font-weight: bold;
       position: relative;
-      color: #007BFF; /* الخط الأساسي أزرق */
+      background: linear-gradient(135deg, #ffffff 30%, #007BFF 50%, #ffffff 70%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shine 4s ease-in-out infinite;
     }
 
-    .glow-text::before {
-      content: attr(data-text);
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      color: #ffffff; 
-      filter: blur(8px);
-      opacity: 0;
-      animation: shimmer 6s ease-in-out infinite;
-      white-space: nowrap;
-      overflow: hidden;
-    }
-
-    @keyframes shimmer {
-      0%   { opacity: 0; clip-path: inset(0 100% 0 0); }
-      30%  { opacity: 1; clip-path: inset(0 66% 0 0); }
-      70%  { opacity: 1; clip-path: inset(0 0 0 33%); }
-      100% { opacity: 0; clip-path: inset(0 0 0 100%); }
+    @keyframes shine {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
     }
 
     nav {
@@ -83,7 +72,7 @@
 <body>
 
   <header>
-    <h1 class="glow-text" data-text="شبكة رؤية">شبكة رؤية</h1>
+    <h1 class="glow-text">شبكة رؤية</h1>
     <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة.</p>
   </header>
 
@@ -96,7 +85,7 @@
 
   <section>
     <h2>صفحة خاصة</h2>
-    <p>تم عكس الألوان: الخط أزرق واللمعة بيضاء ناعمة تمر فوقه بانسيابية.</p>
+    <p>تأثير اللمعة يمر على حروف "شبكة رؤية" نفسها بشكل دقيق وناعم كما طلبت.</p>
   </section>
 
 </body>
