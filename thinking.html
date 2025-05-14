@@ -1,92 +1,51 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>شبكة رؤية</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: #0f0f0f;
-      color: white;
-      font-family: 'Cairo', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      text-align: center;
-      padding: 10px 10px;
-      background: linear-gradient(to left, #0056b3, #003366);
-    }
-
-    .glow-text {
-      font-size: 35px;
-      font-weight: bold;
-      position: relative;
-      background: linear-gradient(135deg, #ffffff 30%, #007BFF 50%, #ffffff 70%);
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: shine 5s ease-in-out infinite;
-    }
-
-    @keyframes shine {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    nav {
-      background: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      border-bottom: 2px solid #0056b3;
-    }
-
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #00aaff;
-    }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    section p {
-      color: #ccc;
-      font-size: 12px;
-      max-width: 700px;
-      margin: auto;
-    }
-  </style>
+  <title>مساعد عبودي الصوتي</title>
 </head>
 <body>
+  <h1>تكلّم.. والموقع يرد عليك</h1>
+  <button onclick="startListening()">ابدأ التحدث</button>
+  <p id="output"></p>
 
-  <header>
-    <h1 class="glow-text">شبكة رؤية</h1>
-    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة.</p>
-  </header>
+  <script>
+    const responses = {
+      "مرحبا": "هلا وغلا يا عبودي!",
+      "كيف حالك": "أنا بخير وانت؟",
+      "من انت": "أنا مساعد عبودي."
+    };
 
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="yemen.html">أخبار اليمن</a>
-    <a href="thought.html">لحظة تفكير</a>
-    <a href="contact.html">تواصل معنا</a>
-  </nav>
+    function startListening() {
+      if (!('webkitSpeechRecognition' in window)) {
+        alert("متصفحك ما يدعم التعرف الصوتي. افتح Google Chrome آخر إصدار.");
+        return;
+      }
 
-  <section>
-    <h2>صفحة خاصة</h2>
-    <p>تأثير اللمعة يمر على حروف "شبكة رؤية" نفسها بشكل دقيق وناعم كما طلبت.</p>
-  </section>
+      const recognition = new webkitSpeechRecognition();
+      recognition.lang = "ar-YE";
 
+      recognition.onstart = function() {
+        document.getElementById("output").innerText = "جاري الاستماع...";
+      };
+
+      recognition.onresult = function(event) {
+        const userSpeech = event.results[0][0].transcript;
+        document.getElementById("output").innerText = "انت قلت: " + userSpeech;
+
+        let reply = responses[userSpeech] || "ما فهمتك يا قلبي.";
+
+        const speech = new SpeechSynthesisUtterance(reply);
+        speech.lang = "ar-YE";
+        window.speechSynthesis.speak(speech);
+      };
+
+      recognition.onerror = function(event) {
+        document.getElementById("output").innerText = "فيه خطأ: " + event.error;
+      };
+
+      recognition.start();
+    }
+  </script>
 </body>
 </html>
