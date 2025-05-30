@@ -2,17 +2,72 @@
 <html lang="ar" dir="rtl">
 <head>
   <meta charset="UTF-8">
-  <title>شبكة رؤية - الأخبارية</title>
+  <title> شبكة رؤية</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+ <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
   <style>
     body {
+      background: #0f0f0f;
+      color: white;
+      font-family: 'Cairo', sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #0f0f0f;
-      font-family: 'Cairo', sans-serif;
-      color: #fff;
     }
+
+    header {
+      text-align: center;
+      padding: 14px;
+      background: linear-gradient(to left, #0056b3, #003366);
+    }
+
+    .glow-text {
+      font-size: 40px;
+      font-weight: bold;
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 30%, #007BFF 50%, #ffffff 70%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shine 5s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    nav {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      border-bottom: 2px solid #0056b3;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section p {
+      color: #ccc;
+      font-size: 12px;
+      max-width: 700px;
+      margin: auto;
+    }
+     }
     header {
       background: linear-gradient(to left, #0056b3, #003366);
       padding: 20px;
@@ -43,8 +98,8 @@
       }
     }
     header p {
-      margin: 5px 0 0;
-      font-size: 13px;
+      margin: 2px 0 0;
+      font-size: 12px;
       color: #e0e0e0;
     }
     nav {
@@ -58,7 +113,7 @@
     nav a {
       color: #ccc;
       text-decoration: none;
-      font-size: 14px;
+      font-size: 13px;
     }
     nav a:hover {
       color: #00aaff;
@@ -68,9 +123,9 @@
     }
     section#news h2 {
       text-align: center;
-      font-size: 30px;
+      font-size: 25px;
       color: #00aaff;
-      margin-bottom: 40px;
+      margin-bottom: 35px;
     }
     .news-container {
       max-width: 900px;
@@ -93,12 +148,12 @@
       margin-bottom: 15px;
     }
     .news-card h3 {
-      margin: 0 0 10px;
-      font-size: 22px;
+      margin: 0 0 8px;
+      font-size: 17px;
       color: #fff;
     }
     .news-card p {
-      font-size: 15px;
+      font-size: 11px;
       color: #ccc;
       margin: 5px 0;
     }
@@ -108,15 +163,14 @@
     }
     .news-date strong {
       color: #ccc;
-    }
   </style>
 </head>
 <body>
+
   <header>
-    <h1>شبكة رؤية</h1>
+    <h1 class="glow-text">شبكة رؤية</h1>
     <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
   </header>
-</nav>
 
     </div>
   <nav>
@@ -133,16 +187,20 @@
     <h2>آخر الأخبار</h2>
     <div class="news-container">
       <div class="news-card">
-        <img src="https://i.postimg.cc/kgjyxNbn/image.jpg" alt="كوريا الشمالية - وظائف عن بعد">
+        <img src="https://media.alfanwahlah.net/yemen_press/news/2025/05/2025-05-24-1748120372722.webp" alt="كوريا الشمالية - وظائف عن بعد">
         <h3>كوريا الشمالية... "هاكرز برواتب دولية!"</h3>
-        <p>تقرير هام يكشف أن عملاء كوريين شماليين يستخدمون هويات مزيفة للعمل عن بُعد في شركات أجنبية، ويحصلون على رواتب تُحوّل إلى بيونغ يانغ.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+        <p>تقرير هام جدا يكشف أن عملاء كوريين شماليين يستخدمون هويات مزيفة للعمل عن بُعد في شركات أجنبية، ويحصلون على رواتب تُحوّل إى يونغ يانغ
+      </p>_
+        <p class="news-date"> <strong> </strong>المصدر: قناة الجزيرة
+        </strong>-
+  2 مايو 2025
+  </strong></p>
       </div>
 
       <div class="news-card">
         <img src="https://i.postimg.cc/rsLG8Qv9/1.webp" alt="كوريا الجنوبية أزمة سياسية">
         <h3>كوريا الجنوبية بلا قيادة... والرئاسة في مهب الريح</h3>
-        <p>استقالة الرئيس المؤقت ورئيس الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
+        <p>استقالة الرئيس المؤقت ورئيسl0 الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
         <p class="news-date"> <strong>2 مايو 2025</strong></p>
       </div>
 
@@ -233,7 +291,8 @@
       </div>
 
       <div class="news-card">
-        <h3>وول ستريت تزدهر بقوة مع موجة الذكاء الاصطناعي</h3>
+          <img src="https://www.aljazeera.net/wp-content/uploads/2025/05/Family-Forum6-1748021121.jpg?resize=770%2C513&quality=80" alt="مؤتمر العلوم السلوكية في أبوظبي">
+        <h3> ارودغان لمواطنيه: أرجوكم أنجبوا 3 أطفال على الأقل</h3>
         <p>ارتفعت مؤشرات الأسهم الأمريكية بدعم من موجة تفاؤل واسعة حول الذكاء الاصطناعي، ونتائج مالية قوية لشركات التقنية الكبرى.</p>
         <p class="news-date"> <strong>2 مايو 2025</strong></p>
       </div>
@@ -244,6 +303,351 @@
         <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
         <p class="news-date"> <strong>2 مايو 2025</strong></p>
       </div>
+      <p>تحديث الأخبار بكل 48 ساعة
+</body>
+</html>
+  </section>
+</body>
+</html>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>شبكة رؤية</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #0f0f0f;
+      color: white;
+      font-family: 'Cairo', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      text-align: center;
+      padding: 14px;
+      background: linear-gradient(to left, #0056b3, #003366);
+    }
+
+    .glow-text {
+      font-size: 40px;
+      font-weight: bold;
+      position: relative;
+      background: linear-gradient(135deg, #ffffff 30%, #007BFF 50%, #ffffff 70%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: shine 5s ease-in-out infinite;
+    }
+
+    @keyframes shine {
+      0% { background-position: 200% 0; }
+      100% { background-position: -200% 0; }
+    }
+
+    nav {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      border-bottom: 2px solid #0056b3;
+    }
+
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #00aaff;
+    }
+
+    section {
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section p {
+      color: #ccc;
+      font-size: 12px;
+      max-width: 700px;
+      margin: auto;
+    }
+     }
+    header {
+      background: linear-gradient(to left, #0056b3, #003366);
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #fff;
+      display: inline-block;
+      overflow: hidden;
+      white-space: nowrap;
+      animation: wipeText 4s linear infinite;
+      animation-delay: 2s;
+    }
+    @keyframes wipeText {
+      0% {
+        clip-path: inset(0 100% 0 0);
+      }
+      40% {
+        clip-path: inset(0 0 0 0);
+      }
+      60% {
+        clip-path: inset(0 0 0 0);
+      }
+      100% {
+        clip-path: inset(0 100% 0 0);
+      }
+    }
+    header p {
+      margin: 2px 0 0;
+      font-size: 12px;
+      color: #e0e0e0;
+    }
+    nav {
+      background: #1a1a1a;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      padding: 10px 0;
+      border-bottom: 2px solid #0056b3;
+    }
+    nav a {
+      color: #ccc;
+      text-decoration: none;
+      font-size: 13px;
+    }
+    nav a:hover {
+      color: #00aaff;
+    }
+    section#news {
+      padding: 40px 20px;
+    }
+    section#news h2 {
+      text-align: center;
+      font-size: 25px;
+      color: #00aaff;
+      margin-bottom: 35px;
+    }
+    .news-container {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+    .news-card {
+      background: #1c1c1c;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+    }
+    .news-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    .news-card h3 {
+      margin: 0 0 8px;
+      font-size: 17px;
+      color: #fff;
+    }
+    .news-card p {
+      font-size: 11px;
+      color: #ccc;
+      margin: 5px 0;
+    }
+    .news-date {
+      font-size: 14px;
+      color: #00aaff;
+    }
+    .news-date strong {
+      color: #ccc;
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 class="glow-text">شبكة رؤية</h1>
+    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
+  </header>
+
+    </div>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="thinking.html">أخبار اليمن</a>
+    <a href="thought.html">لحظة تفكير</a>
+    <a href="contact.html">تواصل معنا</a>
+  </nav>
+
+
+</body>
+</html>
+  <section id="news">
+    <h2>آخر الأخبار</h2>
+    <div class="news-container">
+      <div class="news-card">
+        <img src="https://media.alfanwahlah.net/yemen_press/news/2025/05/2025-05-24-1748120372722.webp" alt="كوريا الشمالية - وظائف عن بعد">
+        <h3>كوريا الشمالية... "هاكرز برواتب دولية!"</h3>
+        <p>تقرير هام جدا يكشف أن عملاء كوريين شماليين يستخدمون هويات مزيفة للعمل عن بُعد في شركات أجنبية، ويحصلون على رواتب تُحوّل إى يونغ يانغ
+      </p>_
+        <p class="news-date"> <strong> </strong>المصدر: قناة الجزيرة
+        </strong>-
+  2 مايو 2025
+  </strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/rsLG8Qv9/1.webp" alt="كوريا الجنوبية أزمة سياسية">
+        <h3>كوريا الجنوبية بلا قيادة... والرئاسة في مهب الريح</h3>
+        <p>استقالة الرئيس المؤقت ورئيسl0 الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/7LF0VKYy/DV2-QL3-DKPFIK3-M4-A643-F3-FQ3-LA.avif" alt="ترامب وبايدن - الاقتصاد الأمريكي">
+        <h3>ترامب يهاجم بايدن ويتنصل من مسؤولية الركود</h3>
+        <p>ترامب يلقي باللوم على بايدن في انكماش الاقتصاد الأمريكي بنسبة 0.3%، متجاهلاً تأثير سياساته التجارية السابقة على الأسواق.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/hvrmKg8S/imrs.webp" alt="ديدي - فضيحة موسيقية">
+        <h3>"ديدي" في وجه العاصفة: اتهامات تهز صناعة الموسيقى</h3>
+        <p>شون "ديدي" كومبس يواجه تحقيقات واسعة بتهم تتعلق بالاتجار الجنسي وسوء السلوك، في قضية تهز أركان صناعة الموسيقى الأمريكية.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/FsrcDdm1/LNV2-PZ4-QX5-MSPGRL7-UYVBIFF3-M.avif" alt="عيد العمال 2025">
+        <h3>مسيرات عيد العمال تملأ الشوارع... ومواجهات في إسطنبول</h3>
+        <p>من باريس إلى طوكيو، شهدت مدن العالم مظاهرات حاشدة بمناسبة عيد العمال، بينما وقعت مواجهات مع الشرطة في إسطنبول أدت إلى اعتقالات.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/d34hz6v3/PIO3-S5-UBYRM7-JM37-GGZ7-C2-PZDM.avif" alt="اتفاق المعادن بين واشنطن وأوكرانيا">
+        <h3>واشنطن وكييف... معادن استراتيجية وشراكة أعمق</h3>
+        <p>وقعت الولايات المتحدة وأوكرانيا اتفاقية لتصدير المعادن الاستراتيجية، ما يعزز الشراكة الاقتصادية بين البلدين في مواجهة التحديات الجيوسياسية.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/024QDbyT/gulfnews-2025-04-29-uem6hwtp-Behavioural-Exchange.jpg" alt="مؤتمر العلوم السلوكية في أبوظبي">
+        <h3>أبوظبي تطلق شبكة عالمية للعلوم السلوكية</h3>
+        <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
+
+  </nav>
+
+  <section id="news">
+    <h2>آخر الأخبار</h2>
+    <div class="news-container">
+      <div class="news-card">
+        <img src="https://i.postimg.cc/kgjyxNbn/image.jpg" alt="كوريا الشمالية - وظائف عن بعد">
+        <h3>كوريا الشمالية... "هاكرز برواتب دولية!"</h3>
+        <p>تقرير هام يكشف أن عملاء كوريين شماليين يستخدمون هويات مزيفة للعمل عن بُعد في شركات أجنبية، ويحصلون على رواتب تُحوّل إلى بيونغ يانغ.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/rsLG8Qv9/1.webp" alt="كوريا الجنوبية أزمة سياسية">
+        <h3>كوريا الجنوبية بلا قيادة... والرئاسة في مهب الريح</h3>
+        <p>استقالة الرئيس المؤقت ورئيس الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/7LF0VKYy/DV2-QL3-DKPFIK3-M4-A643-F3-FQ3-LA.avif" alt="ترامب وبايدن - الاقتصاد الأمريكي">
+        <h3>ترامب يهاجم بايدن ويتنصل من مسؤولية الركود</h3>
+        <p>ترامب يلقي باللوم على بايدن في انكماش الاقتصاد الأمريكي بنسبة 0.3%، متجاهلاً تأثير سياساته التجارية السابقة على الأسواق.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/hvrmKg8S/imrs.webp" alt="ديدي - فضيحة موسيقية">
+        <h3>"ديدي" في وجه العاصفة: اتهامات تهز صناعة الموسيقى</h3>
+        <p>شون "ديدي" كومبس يواجه تحقيقات واسعة بتهم تتعلق بالاتجار الجنسي وسوء السلوك، في قضية تهز أركان صناعة الموسيقى الأمريكية.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/FsrcDdm1/LNV2-PZ4-QX5-MSPGRL7-UYVBIFF3-M.avif" alt="عيد العمال 2025">
+        <h3>مسيرات عيد العمال تملأ الشوارع... ومواجهات في إسطنبول</h3>
+        <p>من باريس إلى طوكيو، شهدت مدن العالم مظاهرات حاشدة بمناسبة عيد العمال، بينما وقعت مواجهات مع الشرطة في إسطنبول أدت إلى اعتقالات.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+        <img src="https://i.postimg.cc/d34hz6v3/PIO3-S5-UBYRM7-JM37-GGZ7-C2-PZDM.avif" alt="اتفاق المعادن بين واشنطن وأوكرانيا">
+        <h3>واشنطن وكييف... معادن استراتيجية وشراكة أعمق</h3>
+        <p>وقعت الولايات المتحدة وأوكرانيا اتفاقية لتصدير المعادن الاستراتيجية، ما يعزز الشراكة الاقتصادية بين البلدين في مواجهة التحديات الجيوسياسية.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+          <img src="https://www.aljazeera.net/wp-content/uploads/2025/05/Family-Forum6-1748021121.jpg?resize=770%2C513&quality=80" alt="مؤتمر العلوم السلوكية في أبوظبي">
+        <h3> ارودغان لمواطنيه: أرجوكم أنجبوا 3 أطفال على الأقل</h3>
+        <p>ارتفعت مؤشرات الأسهم الأمريكية بدعم من موجة تفاؤل واسعة حول الذكاء الاصطناعي، ونتائج مالية قوية لشركات التقنية الكبرى.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+
+      <div class="news-card">
+    <iframe width="320" height="200"
+  src="https://youtu.be/LmO-y75LZuU?si=hitPe2KvmTvhoimV"
+  
+  <style>
+.responsive-video {
+  position: relative;
+  padding-bottom: 56.25%; /* نسبة 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: 15px;
+}
+</style>
+
+<div class="responsive-video">
+  <iframe width="300" height="200"
+  src="https://www.youtube.com/embed/LmO-y75LZuU"
+  title="YouTube video player" frameborder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowfullscreen>
+</iframe>
+
+        <h3>أبوظبي تطلق شبكة عالمية للعلوم السلوكية</h3>
+        <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
+        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+      </div>
+      <p>تتحدث الأخبار بكل 48 ساعة
+</body>
+</html>
   </section>
 </body>
 </html>
