@@ -31,9 +31,34 @@
       <td>25</td>
     </tr>
   </table>
-<video controls width="100%">
-  <source src="videos/video1.mp4" type="video/mp4">
-  متصفحك لا يدعم تشغيل الفيديو.
-</video>
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8" />
+  <title>عرض الفيديو</title>
+  <style>
+    body {
+      background: #111;
+      color: #eee;
+      font-family: 'Tajawal', sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    video {
+      max-width: 90%;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00cfff;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>فيديو رقم 1</h1>
+
+  <video controls>
+    <source src="videos/video1.mp4" type="video/mp4" />
+    متصفحك لا يدعم عرض الفيديو.
+  </video>
+
 </body>
 </html>
