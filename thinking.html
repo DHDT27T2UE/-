@@ -1,51 +1,155 @@
 <!DOCTYPE html>
 <html lang="ar">
 <head>
-  <meta charset="UTF-8">
-  <title>مساعد عبودي الصوتي</title>
+  <meta charset="UTF-8" />
+  <title>فريق منظمة R.D.F</title>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Tajawal', sans-serif;
+      background: linear-gradient(to bottom, #111, #222);
+      margin: 0;
+      padding: 30px 15px;
+      direction: rtl;
+      color: #fff;
+    }
+
+    h1 {
+      text-align: center;
+      color: #00cfff;
+      margin-bottom: 50px;
+      font-size: 32px;
+      letter-spacing: 1px;
+    }
+
+    .team-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 25px;
+      justify-content: center;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 18px;
+      width: 320px;
+      overflow: hidden;
+      box-shadow: 0 0 0 rgba(0, 255, 255, 0.0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      align-items: center;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 10px 2px rgba(0, 207, 255, 0.25);
+    }
+
+    /* حذف تأثير الخلفية على بيانات الكرت */
+
+    .card img.card-img-small {
+      width: 130px;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #00cfff;
+      box-shadow:
+        0 0 4px #00cfffaa,
+        0 0 10px #00cfff77;
+      flex-shrink: 0;
+      transition: box-shadow 0.3s ease;
+    }
+
+    .card:hover img.card-img-small {
+      box-shadow:
+        0 0 6px #00e6ffcc,
+        0 0 14px #00e6ffaa;
+    }
+
+    .card-body {
+      flex: 1;
+      text-align: right;
+      color: #ccc;
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 22px;
+      color: #00cfff;
+    }
+
+    .card p {
+      margin: 6px 0;
+      font-size: 15px;
+      line-height: 1.3;
+    }
+
+    .card .note {
+      margin-top: 12px;
+      color: #aaa;
+      font-size: 14px;
+      line-height: 1.6;
+      border-top: 1px solid #333;
+      padding-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .card {
+        flex-direction: column;
+        width: 90%;
+      }
+      .card img.card-img-small {
+        margin: 0 auto 15px auto;
+      }
+      .card-body {
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>تكلّم.. والموقع يرد عليك</h1>
-  <button onclick="startListening()">ابدأ التحدث</button>
-  <p id="output"></p>
 
-  <script>
-    const responses = {
-      "مرحبا": "هلا وغلا يا عبودي!",
-      "كيف حالك": "أنا بخير وانت؟",
-      "من انت": "أنا مساعد عبودي."
-    };
+  <h1>فريق منظمة R.D.F</h1>
 
-    function startListening() {
-      if (!('webkitSpeechRecognition' in window)) {
-        alert("متصفحك ما يدعم التعرف الصوتي. افتح Google Chrome آخر إصدار.");
-        return;
-      }
+  <div class="team-container">
 
-      const recognition = new webkitSpeechRecognition();
-      recognition.lang = "ar-YE";
+    <div class="card">
+      <img class="card-img-small" src="https://i.postimg.cc/YSCpYL8b/image.jpg" alt="صورة أحمد صغيرة" />
+      <div class="card-body">
+        <h3>أحمد العلي</h3>
+        <p><strong>المنصب:</strong> المدير التنفيذي</p>
+        <p><strong>البريد:</strong> ahmed@rdf.org</p>
+        <p><strong>الهاتف:</strong> +967-777-123-456</p>
+        <p class="note">خبير في إدارة المشاريع التنموية لأكثر من 10 سنوات وله حضور إقليمي وعالمي.</p>
+      </div>
+    </div>
 
-      recognition.onstart = function() {
-        document.getElementById("output").innerText = "جاري الاستماع...";
-      };
+    <div class="card">
+      <img class="card-img-small" src="https://i.postimg.cc/YSCpYL8b/image.jpg" alt="صورة سارة صغيرة" />
+      <div class="card-body">
+        <h3>سارة القحطاني</h3>
+        <p><strong>المنصب:</strong> مسؤولة العلاقات العامة</p>
+        <p><strong>البريد:</strong> sara@rdf.org</p>
+        <p><strong>الهاتف:</strong> +967-777-654-321</p>
+        <p class="note">رائدة في التواصل المؤسسي وبناء الشراكات الاستراتيجية مع مؤسسات دولية.</p>
+      </div>
+    </div>
 
-      recognition.onresult = function(event) {
-        const userSpeech = event.results[0][0].transcript;
-        document.getElementById("output").innerText = "انت قلت: " + userSpeech;
+    <div class="card">
+      <img class="card-img-small" src="https://i.postimg.cc/YSCpYL8b/image.jpg" alt="صورة محمد صغيرة" />
+      <div class="card-body">
+        <h3>محمد الأصبحي</h3>
+        <p><strong>المنصب:</strong> المستشار القانوني</p>
+        <p><strong>البريد:</strong> mohammed@rdf.org</p>
+        <p><strong>الهاتف:</strong> +967-777-888-999</p>
+        <p class="note">محامٍ معتمد في القوانين الإنسانية، شارك في صياغة لوائح حقوقية دولية.</p>
+      </div>
+    </div>
 
-        let reply = responses[userSpeech] || "ما فهمتك يا قلبي.";
+  </div>
 
-        const speech = new SpeechSynthesisUtterance(reply);
-        speech.lang = "ar-YE";
-        window.speechSynthesis.speak(speech);
-      };
-
-      recognition.onerror = function(event) {
-        document.getElementById("output").innerText = "فيه خطأ: " + event.error;
-      };
-
-      recognition.start();
-    }
-  </script>
 </body>
 </html>
