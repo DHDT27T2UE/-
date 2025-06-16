@@ -1,652 +1,490 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <title>شبكة رؤية</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>متجر سينور للأناقة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    body {
-      background: #0f0f0f;
-      color: white;
-      font-family: 'Cairo', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      text-align: center;
-      padding: 14px;
-      background: linear-gradient(to left, #0056b3, #003366);
-    }
-
-    .glow-text {
-      font-size: 40px;
-      font-weight: bold;
-      position: relative;
-      background: linear-gradient(135deg, #ffffff 30%, #007BFF 50%, #ffffff 70%);
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: shine 5s ease-in-out infinite;
-    }
-
-    @keyframes shine {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    nav {
-      background: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      border-bottom: 2px solid #0056b3;
-    }
-
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #00aaff;
-    }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    section p {
-      color: #ccc;
-      font-size: 12px;
-      max-width: 700px;
-      margin: auto;
-    }
-     }
-    header {
-      background: linear-gradient(to left, #0056b3, #003366);
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      color: #fff;
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: wipeText 4s linear infinite;
-      animation-delay: 2s;
-    }
-    @keyframes wipeText {
-      0% {
-        clip-path: inset(0 100% 0 0);
-      }
-      40% {
-        clip-path: inset(0 0 0 0);
-      }
-      60% {
-        clip-path: inset(0 0 0 0);
-      }
-      100% {
-        clip-path: inset(0 100% 0 0);
-      }
-    }
-    header p {
-      margin: 2px 0 0;
-      font-size: 12px;
-      color: #e0e0e0;
-    }
-    nav {
-      background: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      border-bottom: 2px solid #0056b3;
-    }
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 13px;
-    }
-    nav a:hover {
-      color: #00aaff;
-    }
-    section#news {
-      padding: 40px 20px;
-    }
-    section#news h2 {
-      text-align: center;
-      font-size: 25px;
-      color: #00aaff;
-      margin-bottom: 35px;
-    }
-    .news-container {
-      max-width: 900px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-    .news-card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-    .news-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
-    .news-card h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-      color: #fff;
-    }
-    .news-card p {
-      font-size: 11px;
-      color: #ccc;
-      margin: 5px 0;
-    }
-    .news-date {
-      font-size: 14px;
-      color: #00aaff;
-    }
-    .news-date strong {
-      color: #ccc;
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1 class="glow-text">شبكة رؤية</h1>
-    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
-  </header>
-
-    </div>
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="thinking.html">أخبار اليمن</a>
-    <a href="were.html">لحظة تفكير</a>
-    <a href="contact.html">تواصل معنا</a>
-  </nav>
-
-
-</body>
-</html>
-  <section id="news">
-    <h2>آخر الأخبار</h2>
-    <div class="news-container">
-      <div class="news-card">
-        <img src="https://media.alfanwahlah.net/yemen_press/news/2025/05/2025-05-24-1748120372722.webp" alt="كوريا الشمالية - وظائف عن <h3>تم فتح طر يق دمت والضالع</h3>
-        <p>تقرير هام جدا يكشف أن عملاء كوريين شماليين يستخدمون هويات مزيفة للعمل عن بُعد في شركات أجنبية، ويحصلون على رواتب تُحوّل إى يونغ يانغ
-      </p>_
-        <p class="news-date"> <strong> </strong>المصدر: قناة الجزيرة
-        </strong>-
-  2 مايو 2025
-  </strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/rsLG8Qv9/1.webp" alt="كوريا الجنوبية أزمة سياسية">
-        <h3>كوريا الجنوبية بلا قيادة... والرئاسة في مهب الريح</h3>
-        <p>استقالة الرئيس المؤقت ورئيسl0 الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/7LF0VKYy/DV2-QL3-DKPFIK3-M4-A643-F3-FQ3-LA.avif" alt="ترامب وبايدن - الاقتصاد الأمريكي">
-        <h3>ترامب يهاجم بايدن ويتنصل من مسؤولية الركود</h3>
-        <p>ترامب يلقي باللوم على بايدن في انكماش الاقتصاد الأمريكي بنسبة 0.3%، متجاهلاً تأثير سياساته التجارية السابقة على الأسواق.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/hvrmKg8S/imrs.webp" alt="ديدي - فضيحة موسيقية">
-        <h3>"ديدي" في وجه العاصفة: اتهامات تهز صناعة الموسيقى</h3>
-        <p>شون "ديدي" كومبس يواجه تحقيقات واسعة بتهم تتعلق بالاتجار الجنسي وسوء السلوك، في قضية تهز أركان صناعة الموسيقى الأمريكية.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/FsrcDdm1/LNV2-PZ4-QX5-MSPGRL7-UYVBIFF3-M.avif" alt="عيد العمال 2025">
-        <h3>مسيرات عيد العمال تملأ الشوارع... ومواجهات في إسطنبول</h3>
-        <p>من باريس إلى طوكيو، شهدت مدن العالم مظاهرات حاشدة بمناسبة عيد العمال، بينما وقعت مواجهات مع الشرطة في إسطنبول أدت إلى اعتقالات.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/d34hz6v3/PIO3-S5-UBYRM7-JM37-GGZ7-C2-PZDM.avif" alt="اتفاق المعادن بين واشنطن وأوكرانيا">
-        <h3>واشنطن وكييف... معادن استراتيجية وشراكة أعمق</h3>
-        <p>وقعت الولايات المتحدة وأوكرانيا اتفاقية لتصدير المعادن الاستراتيجية، ما يعزز الشراكة الاقتصادية بين البلدين في مواجهة التحديات الجيوسياسية.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/024QDbyT/gulfnews-2025-04-29-uem6hwtp-Behavioural-Exchange.jpg" alt="مؤتمر العلوم السلوكية في أبوظبي">
-        <h3>أبوظبي تطلق شبكة عالمية للعلوم السلوكية</h3>
-        <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
-
-  </nav>
-
-  <section id="news">
-    <h2>آخر الأخبار</h2>
-    <div class="news-container">
-      <div class="news-card">
-        <img src="https://i.postimg.cc/kgjyxNbn/image.jpg" alt="كوريا الشمالية - وظائف عن بعد">
-        <h3>كوريا الشمالية... "هاكرز برواتب دولية!"</h3>
-        <p>تقرير هام يكشف أن عملاء كوريين شماليين يستخدمون هويات مزيفة للعمل عن بُعد في شركات أجنبية، ويحصلون على رواتب تُحوّل إلى بيونغ يانغ.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/rsLG8Qv9/1.webp" alt="كوريا الجنوبية أزمة سياسية">
-        <h3>كوريا الجنوبية بلا قيادة... والرئاسة في مهب الريح</h3>
-        <p>استقالة الرئيس المؤقت ورئيس الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/7LF0VKYy/DV2-QL3-DKPFIK3-M4-A643-F3-FQ3-LA.avif" alt="ترامب وبايدن - الاقتصاد الأمريكي">
-        <h3>ترامب يهاجم بايدن ويتنصل من مسؤولية الركود</h3>
-        <p>ترامب يلقي باللوم على بايدن في انكماش الاقتصاد الأمريكي بنسبة 0.3%، متجاهلاً تأثير سياساته التجارية السابقة على الأسواق.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/hvrmKg8S/imrs.webp" alt="ديدي - فضيحة موسيقية">
-        <h3>"ديدي" في وجه العاصفة: اتهامات تهز صناعة الموسيقى</h3>
-        <p>شون "ديدي" كومبس يواجه تحقيقات واسعة بتهم تتعلق بالاتجار الجنسي وسوء السلوك، في قضية تهز أركان صناعة الموسيقى الأمريكية.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/FsrcDdm1/LNV2-PZ4-QX5-MSPGRL7-UYVBIFF3-M.avif" alt="عيد العمال 2025">
-        <h3>مسيرات عيد العمال تملأ الشوارع... ومواجهات في إسطنبول</h3>
-        <p>من باريس إلى طوكيو، شهدت مدن العالم مظاهرات حاشدة بمناسبة عيد العمال، بينما وقعت مواجهات مع الشرطة في إسطنبول أدت إلى اعتقالات.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/d34hz6v3/PIO3-S5-UBYRM7-JM37-GGZ7-C2-PZDM.avif" alt="اتفاق المعادن بين واشنطن وأوكرانيا">
-        <h3>واشنطن وكييف... معادن استراتيجية وشراكة أعمق</h3>
-        <p>وقعت الولايات المتحدة وأوكرانيا اتفاقية لتصدير المعادن الاستراتيجية، ما يعزز الشراكة الاقتصادية بين البلدين في مواجهة التحديات الجيوسياسية.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-          <img src="https://www.aljazeera.net/wp-content/uploads/2025/05/Family-Forum6-1748021121.jpg?resize=770%2C513&quality=80" alt="مؤتمر العلوم السلوكية في أبوظبي">
-        <h3> ارودغان لمواطنيه: أرجوكم أنجبوا 3 أطفال على الأقل</h3>
-        <p>ارتفعت مؤشرات الأسهم الأمريكية بدعم من موجة تفاؤل واسعة حول الذكاء الاصطناعي، ونتائج مالية قوية لشركات التقنية الكبرى.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/024QDbyT/gulfnews-2025-04-29-uem6hwtp-Behavioural-Exchange.jpg" alt="مؤتمر العلوم السلوكية في أبوظبي">
-        <h3>أبوظبي تطلق شبكة عالمية للعلوم السلوكية</h3>
-        <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-      <p>تحديث الأخبار بكل 48 ساعة
-</body>
-</html>
-  </section>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>شبكة رؤية</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      background: #0f0f0f;
-      color: white;
-      font-family: 'Cairo', sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    header {
-      text-align: center;
-      padding: 14px;
-      background: linear-gradient(to left, #0056b3, #003366);
-    }
-
-    .glow-text {
-      font-size: 40px;
-      font-weight: bold;
-      position: relative;
-      background: linear-gradient(135deg, #ffffff 30%, #007BFF 50%, #ffffff 70%);
-      background-size: 200% 100%;
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-      animation: shine 5s ease-in-out infinite;
-    }
-
-    @keyframes shine {
-      0% { background-position: 200% 0; }
-      100% { background-position: -200% 0; }
-    }
-
-    nav {
-      background: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      border-bottom: 2px solid #0056b3;
-    }
-
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 14px;
-    }
-
-    nav a:hover {
-      color: #00aaff;
-    }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
-    }
-
-    section p {
-      color: #ccc;
-      font-size: 12px;
-      max-width: 700px;
-      margin: auto;
-    }
-     }
-    header {
-      background: linear-gradient(to left, #0056b3, #003366);
-      padding: 20px;
-      text-align: center;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 36px;
-      color: #fff;
-      display: inline-block;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: wipeText 4s linear infinite;
-      animation-delay: 2s;
-    }
-    @keyframes wipeText {
-      0% {
-        clip-path: inset(0 100% 0 0);
-      }
-      40% {
-        clip-path: inset(0 0 0 0);
-      }
-      60% {
-        clip-path: inset(0 0 0 0);
-      }
-      100% {
-        clip-path: inset(0 100% 0 0);
-      }
-    }
-    header p {
-      margin: 2px 0 0;
-      font-size: 12px;
-      color: #e0e0e0;
-    }
-    nav {
-      background: #1a1a1a;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      border-bottom: 2px solid #0056b3;
-    }
-    nav a {
-      color: #ccc;
-      text-decoration: none;
-      font-size: 13px;
-    }
-    nav a:hover {
-      color: #00aaff;
-    }
-    section#news {
-      padding: 40px 20px;
-    }
-    section#news h2 {
-      text-align: center;
-      font-size: 25px;
-      color: #00aaff;
-      margin-bottom: 35px;
-    }
-    .news-container {
-      max-width: 900px;
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-      gap: 25px;
-    }
-    .news-card {
-      background: #1c1c1c;
-      padding: 20px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-    }
-    .news-card img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      object-fit: cover;
-      margin-bottom: 15px;
-    }
-    .news-card h3 {
-      margin: 0 0 8px;
-      font-size: 17px;
-      color: #fff;
-    }
-    .news-card p {
-      font-size: 11px;
-      color: #ccc;
-      margin: 5px 0;
-    }
-    .news-date {
-      font-size: 14px;
-      color: #00aaff;
-    }
-    .news-date strong {
-      color: #ccc;
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1 class="glow-text">شبكة رؤية</h1>
-    <p>شبكة رؤية جهة مستقلة ترصد أبرز الأحداث والأخبار وتقدم محتواها بناءً على متابعة دقيقة لمصادر إعلامية موثوقة ومتعددة.</p>
-  </header>
-
-    </div>
-  <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="thinking.html">أخبار اليمن</a>
-    <a href="thought.html">لحظة تفكير</a>
-    <a href="contact.html">تواصل معنا</a>
-  </nav>
-
-
-</body>
-</html>
-  <section id="news">
-    <h2>آخر الأخبار</h2>
-    <div class="news-container">
-      <div class="news-card">
-        <img src="https://media.alfanwahlah.net/yemen_press/news/2025/05/2025-05-24-1748120372722.webp" alt="كوريا الشمالية - وظائف عن بعد">
-        <h3>كوريا الشمالية... "هاكرز برواتب دولية!"</h3>
-        <p>تقرير هام جدا يكشف أن عملاء كوريين شماليين يستخدمون هويات مزيفة للعمل عن بُعد في شركات أجنبية، ويحصلون على رواتب تُحوّل إى يونغ يانغ
-      </p>_
-        <p class="news-date"> <strong> </strong>المصدر: قناة الجزيرة
-        </strong>-
-  2 مايو 2025
-  </strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/rsLG8Qv9/1.webp" alt="كوريا الجنوبية أزمة سياسية">
-        <h3>كوريا الجنوبية بلا قيادة... والرئاسة في مهب الريح</h3>
-        <p>استقالة الرئيس المؤقت ورئيسl0 الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/7LF0VKYy/DV2-QL3-DKPFIK3-M4-A643-F3-FQ3-LA.avif" alt="ترامب وبايدن - الاقتصاد الأمريكي">
-        <h3>ترامب يهاجم بايدن ويتنصل من مسؤولية الركود</h3>
-        <p>ترامب يلقي باللوم على بايدن في انكماش الاقتصاد الأمريكي بنسبة 0.3%، متجاهلاً تأثير سياساته التجارية السابقة على الأسواق.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/hvrmKg8S/imrs.webp" alt="ديدي - فضيحة موسيقية">
-        <h3>"ديدي" في وجه العاصفة: اتهامات تهز صناعة الموسيقى</h3>
-        <p>شون "ديدي" كومبس يواجه تحقيقات واسعة بتهم تتعلق بالاتجار الجنسي وسوء السلوك، في قضية تهز أركان صناعة الموسيقى الأمريكية.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/FsrcDdm1/LNV2-PZ4-QX5-MSPGRL7-UYVBIFF3-M.avif" alt="عيد العمال 2025">
-        <h3>مسيرات عيد العمال تملأ الشوارع... ومواجهات في إسطنبول</h3>
-        <p>من باريس إلى طوكيو، شهدت مدن العالم مظاهرات حاشدة بمناسبة عيد العمال، بينما وقعت مواجهات مع الشرطة في إسطنبول أدت إلى اعتقالات.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/d34hz6v3/PIO3-S5-UBYRM7-JM37-GGZ7-C2-PZDM.avif" alt="اتفاق المعادن بين واشنطن وأوكرانيا">
-        <h3>واشنطن وكييف... معادن استراتيجية وشراكة أعمق</h3>
-        <p>وقعت الولايات المتحدة وأوكرانيا اتفاقية لتصدير المعادن الاستراتيجية، ما يعزز الشراكة الاقتصادية بين البلدين في مواجهة التحديات الجيوسياسية.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/024QDbyT/gulfnews-2025-04-29-uem6hwtp-Behavioural-Exchange.jpg" alt="مؤتمر العلوم السلوكية في أبوظبي">
-        <h3>أبوظبي تطلق شبكة عالمية للعلوم السلوكية</h3>
-        <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-    </div>
-  </section>
-</body>
-</html>
-
-  </nav>
-
-  <section id="news">
-    <h2>آخر الأخبار</h2>
-    <div class="news-container">
-      <div class="news-card">
-        <img src="https://i.postimg.cc/kgjyxNbn/image.jpg" alt="كوريا الشمالية - وظائف عن بعد">
-        <h3>كوريا الشمالية... "هاكرز برواتب دولية!"</h3>
-        <p>تقرير هام يكشف أن عملاء كوريين شماليين يستخدمون هويات مزيفة للعمل عن بُعد في شركات أجنبية، ويحصلون على رواتب تُحوّل إلى بيونغ يانغ.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/rsLG8Qv9/1.webp" alt="كوريا الجنوبية أزمة سياسية">
-        <h3>كوريا الجنوبية بلا قيادة... والرئاسة في مهب الريح</h3>
-        <p>استقالة الرئيس المؤقت ورئيس الوزراء المنتظر تثير أزمة سياسية مفاجئة في كوريا الجنوبية، قبل أشهر من الانتخابات العامة.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/7LF0VKYy/DV2-QL3-DKPFIK3-M4-A643-F3-FQ3-LA.avif" alt="ترامب وبايدن - الاقتصاد الأمريكي">
-        <h3>ترامب يهاجم بايدن ويتنصل من مسؤولية الركود</h3>
-        <p>ترامب يلقي باللوم على بايدن في انكماش الاقتصاد الأمريكي بنسبة 0.3%، متجاهلاً تأثير سياساته التجارية السابقة على الأسواق.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/hvrmKg8S/imrs.webp" alt="ديدي - فضيحة موسيقية">
-        <h3>"ديدي" في وجه العاصفة: اتهامات تهز صناعة الموسيقى</h3>
-        <p>شون "ديدي" كومبس يواجه تحقيقات واسعة بتهم تتعلق بالاتجار الجنسي وسوء السلوك، في قضية تهز أركان صناعة الموسيقى الأمريكية.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/FsrcDdm1/LNV2-PZ4-QX5-MSPGRL7-UYVBIFF3-M.avif" alt="عيد العمال 2025">
-        <h3>مسيرات عيد العمال تملأ الشوارع... ومواجهات في إسطنبول</h3>
-        <p>من باريس إلى طوكيو، شهدت مدن العالم مظاهرات حاشدة بمناسبة عيد العمال، بينما وقعت مواجهات مع الشرطة في إسطنبول أدت إلى اعتقالات.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-        <img src="https://i.postimg.cc/d34hz6v3/PIO3-S5-UBYRM7-JM37-GGZ7-C2-PZDM.avif" alt="اتفاق المعادن بين واشنطن وأوكرانيا">
-        <h3>واشنطن وكييف... معادن استراتيجية وشراكة أعمق</h3>
-        <p>وقعت الولايات المتحدة وأوكرانيا اتفاقية لتصدير المعادن الاستراتيجية، ما يعزز الشراكة الاقتصادية بين البلدين في مواجهة التحديات الجيوسياسية.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-          <img src="https://www.aljazeera.net/wp-content/uploads/2025/05/Family-Forum6-1748021121.jpg?resize=770%2C513&quality=80" alt="مؤتمر العلوم السلوكية في أبوظبي">
-        <h3> ارودغان لمواطنيه: أرجوكم أنجبوا 3 أطفال على الأقل</h3>
-        <p>ارتفعت مؤشرات الأسهم الأمريكية بدعم من موجة تفاؤل واسعة حول الذكاء الاصطناعي، ونتائج مالية قوية لشركات التقنية الكبرى.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
-      </div>
-
-      <div class="news-card">
-    <iframe width="320" height="200"
-  src="https://youtu.be/LmO-y75LZuU?si=hitPe2KvmTvhoimV"
   
-  <style>
-.responsive-video {
-  position: relative;
-  padding-bottom: 56.25%; /* نسبة 16:9 */
-  height: 0;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin:0;
+      padding: 0;
+      background-color: #2f2f35;
+      color: #f2f2f2;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #8A01FF;
+      color: white;
+      padding: 0.6rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.7rem;
+      margin: 0;
+    }
+    .menu-icon {
+      font-size: 1.3rem;
+      cursor: pointer;
+    }
+    .sidebar {
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+      width: 250px;
+      height: 100%;
+      background-color: #7301D3;
+      color: white;
+      transition: transform 0.3s ease;
+      padding: 1.5rem 1rem;
+      z-index: 1000;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    .sidebar a {
+      display: block;
+      margin: 1rem 0;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      padding: 0.7rem;
+      box-sizing: border-box;
+    }
+    .product {
+      background-color: #111111;
+      border-radius: 9px;
+      padding: 0.6rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .product img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 12px;
+      cursor: pointer;
+      max-height: 250px;
+      object-fit: cover;
+    }
+    .product h2 {
+      font-size: 0.8rem;
+      margin: 0.3rem 0 0.1rem 0;
+    }
+    .product .desc {
+      font-size: 0.65rem;
+      color: #d0cfe1;
+      margin-bottom: 0.3rem;
+      height: 6.2em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4em;
+    }
+    .product p {
+      font-weight: bold;
+      margin: 0.2rem 0;
+      font-size: 0.7rem;
+      color: #white;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 4%;
+      margin-top: 0.3rem;
+    }
+    .btn {
+      padding: 0.25rem 0.4rem;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.63rem;
+      text-align: center;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    .buy {
+      font-weight: bold;
+      background-color: #8A01FF;
+      color: white;
+      width: 67%;
+    }
+    .more {
+      font-family: 'Cairo', sans-serif;
+      background-color: #333333;
+      color: white;
+      width: 35%;
+    }
+
+    /* نافذة منبثقة */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 93vw;
+      height: 93vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .modal.open {
+      display: flex;
+    }
+    .modal-content {
+      background-color: #222;
+      border-radius: 10px;
+      max-width: 285px;
+      width: 100%;
+      padding: 2.0rem;
+      color: #eee;
+      text-align: center;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 0.4rem;
+      left: 0.4rem;
+      background: #8A01FF;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 0 15px;
+    }
+    .modal-img-container {
+      position: relative;
+      margin: 1rem 0;
+    }
+    .modal-img-container img {
+      width: 100%;
+      border-radius: 8px;
+      aspect-ratio: 3 / 4;
+      user-select: none;
+      max-height: 350px;
+      object-fit: cover;
+    }
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(138, 1, 255, 0.7);
+      border: none;
+      color: white;
+      font-size: 1.2rem;
+      cursor: pointer;
+      border-radius: 30%;
+      width: 30px;
+      height: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+    .arrow-btn:hover {
+      background: #8A01FF;
+    }
+    .arrow-left {
+      right: 99%;
+      margin-right: 8px;
+    }
+    .arrow-right {
+      left: 99%;
+      margin-left: 8px;
+    }
+    .modal-description {
+      font-size: 0.8rem;
+      margin-top: 0.0rem;
+      color: #d0cfe1;
+      line-height: 1.4;
+    }
+    <style>
+.nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.7rem;
+  padding: 1rem;
 }
 
-.responsive-video iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  border-radius: 15px;
+.nav-button {
+  background-color: #555;
+  color: white;
+  padding: 0.1rem 1rem;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
 }
-</style>
 
-<div class="responsive-video">
-  <iframe width="300" height="200"
-  src="https://www.youtube.com/embed/LmO-y75LZuU"
-  title="YouTube video player" frameborder="0"
-  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen>
-</iframe>
+.nav-button:hover {
+  background-color: #333;
+}
 
-        <h3>أبوظبي تطلق شبكة عالمية للعلوم السلوكية</h3>
-        <p>اختُتم مؤتمر العلوم السلوكية العالمي في أبوظبي بمشاركة أكثر من 500 خبير دولي، وتم الإعلان عن شبكة عالمية تعزز السياسات القائمة على فهم السلوك الإنساني.</p>
-        <p class="news-date"> <strong>2 مايو 2025</strong></p>
+.nav-button.active {
+  background-color: #2c2c2c;
+}
+.nav-other {
+  background-color: #77c3aed; /* مثلاً لون بنفسجي */
+  color: white;
+}
+  </style>
+</head>
+<body>
+  <script>
+function setActive(element) {
+  const buttons = document.querySelectorAll('.nav-button');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  element.classList.add('active');
+}
+</script>
+
+  <header>
+    <h1>متجر سينور للأناقة</h1>
+    <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+  </header>
+  <div class="sidebar" id="sidebar">
+    <a href="#">الصفحة الرئيسية</a>
+    <a href="#">منتجاتنا</a>
+    <a href="#"> تواصل بنا عبر وتساب</a>
+    <a href="#">سياسة الخصوصية</a>
+    <a href="#">عامية</a>
+  </div>
+<div class="nav-buttons"</a>
+   <main class="products">
+  <a href="#" class="nav-button active" onclick="setActive(this)">نسائي</a>
+  <a href="#" class="nav-button" onclick="setActive(this)">رجالي</a>
+  <a href="#" class="nav-button" onclick="setActive(this)">بناتي</a>
+  <a href="#" class="nav-button" onclick="setActive(this)">ولادي</a>
+  <a href="#" class="nav-button" onclick="setActive(this)">إكسسوارات</a>
+  <a href="#" class="nav-button" onclick="setActive(this)">إكترونيات</a>
+   <a href="#" class="nav-button" onclick="setActive(this)">آخر</a>
+   <a href="#" class="nav-button nav-other" onclick="setActive(this)">الجديد</a>
+   <main class="products">
+</div>
+  <main class="products">
+    <!-- المنتج الأول -->
+    <div class="product">
+      <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستان بنفسجي فاخر" />
+      <h2>فستان بنفسجي فاخر</h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
+      <p>السعر: 200 ريال</p>
+      <div class="buttons">
+        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+        <button class="btn more" onclick="openModal(0)">تعرف أكثر</button>
       </div>
-      <p>تتحدث الأخبار بكل 48 ساعة
-</body>
-</html>
-  </section>
+    </div>
+
+    <!-- المنتج الثاني -->
+    <div class="product">
+      <img src="https://i.postimg.cc/FF6m9Qtp/image.jpg" alt="فستان أبيض فاخر" />
+      <h2>فستان أبيض فاخر</h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
+      <p>السعر: 2700 ريال</p>
+      <div class="buttons">
+        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+        <button class="btn more" onclick="openModal(1)">تعرف أكثر</button>
+      </div>
+    </div>
+
+    <!-- المنتج الثالث -->
+    <div class="product">
+      <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستان بنفسجي فاخر" />
+      <h2>فستان بنفسجي فاخر</h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
+      <p>السعر: 200 ريال</p>
+      <div class="buttons">
+        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+        <button class="btn more" onclick="openModal(2)">تعرف أكثر</button>
+      </div>
+    </div>
+
+    <!-- المنتج الرابع -->
+    <div class="product">
+      <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستان بنفسجي فاخر" />
+      <h2>فستان بنفسجي فاخر</h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
+      <p>السعر: 200 ريال</p>
+      <div class="buttons">
+        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+        <button class="btn more" onclick="openModal(3)">تعرف أكثر</button>
+      </div>
+    </div>
+        <!-- المنتج الخامس -->
+    <div class="product">
+      <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستادي فاخر" />
+      <h2>فستادي فاخري</h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
+      <p>السعر: 200 ريال</p>
+      <div class="buttons">
+        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+        <button class="btn more" onclick="openModal(0)">تعرف أكثر</button>
+      </div>
+  </main>
+
+  <!-- نافذة منبثقة -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <h2 id="modalTitle">فستان بنفسجي فاخر</h2>
+      <div class="modal-img-container">
+        <button class="arrow-btn arrow-left" id="prevImgBtn">&#9664;</button>
+        <img src="" alt="صورة المنتج" id="modalImage" />
+        <button class="arrow-btn arrow-right" id="nextImgBtn">&#9654;</button>
+      </div>
+      <p class="modal-description" id="modalDesc">
+        فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب
+      </p>
+      <p><strong>السعر:</strong> <span id="modalPrice">200 ريال</span></p>
+    </div>
+  </div>
+  
+  <!--2 نافذة منبثقة -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <h2 id="modalTitle">فستادي فاخر</h2>
+      <div class="modal-img-container">
+        <button class="arrow-btn arrow-left" id="prevImgBtn">&#9664;</button>
+        <img src="" alt="صورة المنتج" id="modalImage" />
+        <button class="arrow-btn arrow-right" id="nextImgBtn">&#9654;</button>
+      </div>
+      <p class="modal-description" id="modalDesc">
+        فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب
+      </p>
+      <p><strong>السعر:</strong> <span id="modalPrice">2090 ريال</span></p>
+    </div>
+  </div>
+  <!--3 نافذة منبثقة -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <h2 id="modalTitle">فستنا أبيض فاخر</h2>
+      <div class="modal-img-container">
+        <button class="arrow-btn arrow-left" id="prevImgBtn">&#9664;</button>
+        <img src="" alt="صورة المنتج" id="modalImage" />
+        <button class="arrow-btn arrow-right" id="nextImgBtn">&#9654;</button>
+      </div>
+      <p class="modal-description" id="modalDesc">
+        فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب
+      </p>
+      <p><strong>السعر:</strong> <span id="modalPrice">200 ريال</span></p>
+    </div>
+  </div>
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    const products = [
+      {
+        title: "فستادي فاخر",
+        desc: "فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب 7yy وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب",
+        price: "20,00 الف ريال",
+        images: [
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg"
+        ],
+      },
+      {
+        title: " فستان أبيض فاخر",
+        desc: "فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب",
+        price: "200 ريال",
+        images: [
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/FF6m9Qtp/image.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/FF6m9Qtp/image.jpg"
+        ],
+      },
+      {
+        title: "فستان بنفسجي فاخر",
+        desc: "فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب",
+        price: "200 ريال",
+        images: [
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg"
+        ],
+      },
+      {
+        title: "فستان بنفسجي فاخر",
+        desc: "فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب",
+        price: "200 ريال",
+        images: [
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg"
+        ],
+      }
+    ];
+
+    let currentProductIndex = 0;
+    let currentImageIndex = 0;
+
+    const modal = document.getElementById('productModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalImage = document.getElementById('modalImage');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const prevImgBtn = document.getElementById('prevImgBtn');
+    const nextImgBtn = document.getElementById('nextImgBtn');
+
+    function openModal(productIndex) {
+      currentProductIndex = productIndex;
+      currentImageIndex = 0;
+      updateModalContent();
+      modal.classList.add('open');
+    }
+
+    function updateModalContent() {
+      const product = products[currentProductIndex];
+      modalTitle.textContent = product.title;
+      modalDesc.textContent = product.desc;
+      modalPrice.textContent = product.price;
+      modalImage.src = product.images[currentImageIndex];
+    }
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.remove('open');
+    });
+
+    prevImgBtn.addEventListener('click', () => {
+      const product = products[currentProductIndex];
+      currentImageIndex = (currentImageIndex - 1 + product.images.length) % product.images.length;
+      updateModalContent();
+    });
+
+    nextImgBtn.addEventListener('click', () => {
+      const product = products[currentProductIndex];
+      currentImageIndex = (currentImageIndex + 1) % product.images.length;
+      updateModalContent();
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+      }
+    });
+  </script>
 </body>
 </html>
