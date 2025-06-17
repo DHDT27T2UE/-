@@ -6,7 +6,76 @@
   <title>متجر سينور للأناقة</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-  
+  .btn.buy {
+  position: relative;
+  z-index: 1;
+  /* باقي ستايلك الأصلي يبقى كما هو */
+}
+
+/* التوهج المتحرك */
+.btn.buy::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 10px;
+  z-index: -1;
+  background: radial-gradient(circle, #a443ff88 0%, #8A01FF44 60%, transparent 100%);
+  opacity: 0.8;
+  animation: btn-purple-glow 5.2s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes btn-purple-glow {
+  0% {
+    box-shadow: 0 0 6px 2px #8A01FF66, 0 0 14px 6px #8A01FF33;
+    opacity: 0.7;
+    filter: blur(1px);
+  }
+  100% {
+    box-shadow: 0 0 18px 7px #a443ffcc, 0 0 36px 14px #8A01FF55;
+    opacity: 1;
+    filter: blur(2.2px);
+  }
+}
+  .nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* صفين كل صف فيه زرين */
+  gap: 0.5rem;
+  padding: 0.5rem;
+  justify-items: center;
+}
+/*تعديل الازرار الي فوق*/
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 125px;
+  background: #444;
+  color: #fff;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s;
+  box-shadow: 0 1px 4px #2223;
+}
+/*إلى هنا*/
+.nav-button:hover,
+.nav-button.active {
+  background: #8A01FF;
+  color: #fff;
+}
+/*تعديل الصور التي داخل الازرار التي فوق*/
+.nav-icon {
+  width: 72px;
+  height: 92px;
+  border-radius: 30%;
+  object-fit: cover;
+  margin-bottom: 1px;
+}
+  /*إلى هنا*/
     body {
       font-family: 'Cairo', sans-serif;
       margin:0;
@@ -24,7 +93,7 @@
       align-items: center;
     }
     header h1 {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
       margin: 0;
     }
     .menu-icon {
@@ -133,7 +202,7 @@
       left: 0;
       top: 0;
       width: 93vw;
-      height: 93vh;
+      height: 100vh;
       overflow: auto;
       background-color: rgba(0,0,0,0.7);
       justify-content: center;
@@ -184,11 +253,11 @@
       background: rgba(138, 1, 255, 0.7);
       border: none;
       color: white;
-      font-size: 1.2rem;
+      font-size: 1.5rem;
       cursor: pointer;
       border-radius: 30%;
-      width: 30px;
-      height: 30px;
+      width: 35px;
+      height: 50px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -207,10 +276,11 @@
     }
     .modal-description {
       font-size: 0.8rem;
-      margin-top: 0.0rem;
+      margin-top: 0.8rem;
       color: #d0cfe1;
       line-height: 1.4;
     }
+    
     <style>
 .nav-buttons {
   display: grid;
@@ -242,7 +312,73 @@
   background-color: #77c3aed; /* مثلاً لون بنفسجي */
   color: white;
 }
+.btn-whatsapp {
+  font-family: 'Cairo', sans-serif;
+  background-color:#00963E;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-whatsapp:hover {
+  background-color:#00963E;
+}
+
+.btn-cancel {
+  font-family: 'Cairo', sans-serif;
+  background-color: #888;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-cancel:hover {
+  background-color: #666;
+}
+
   </style>
+<head>
+  <style>
+    /* CSS القديم حقك */
+    ...
+    /* الآن أضف كود التوهج هنا */
+    .btn.buy::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 5px;
+      z-index: -1;
+      background: radial-gradient(circle, #a443ff88 0%, #8A01FF44 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 10.3s;
+      pointer-events: none;
+    }
+    .btn.buy:hover::after, .btn.buy:focus::after {
+      opacity: 0.85;
+      animation: btn-purple-glow 10.2s infinite alternate;
+    }
+    @keyframes btn-purple-glow {
+      0% {
+        box-shadow: 0 0 6px 2px #8A01FF66, 0 0 14px 6px #8A01FF33;
+        opacity: 0.3;
+        filter: blur(0.5px);
+      }
+      100% {
+        box-shadow: 0 0 20px 2px #a443ffcc, 0 0 20px 11px #8A01FF55;
+        opacity: 1;
+        filter: blur(20.2px);
+      }
+    }
+  </style>
+</head>
 </head>
 <body>
   <script>
@@ -254,7 +390,7 @@ function setActive(element) {
 </script>
 
   <header>
-    <h1>متجر بريفور للأناقة</h1>
+    <h1>متجر عرب ستايل للأناقة</h1>
     <div class="menu-icon" onclick="toggleSidebar()">☰</div>
   </header>
   <div class="sidebar" id="sidebar">
@@ -264,17 +400,47 @@ function setActive(element) {
     <a href="#">سياسة الخصوصية</a>
     <a href="#">عامية</a>
   </div>
-<div class="nav-buttons"</a>
-   <main class="products">
-     <a href="index.html" class="nav-button" onclick="setActive(this)">نسائي</a>
-  <a href="RGALI.html" class="nav-button active" onclick="setActive(this)">رجالي</a>
-  <a href="#" class="nav-button" onclick="setActive(this)">بناتي</a>
-  <a href="#" class="nav-button" onclick="setActive(this)">ولادي</a>
-  <a href="#" class="nav-button" onclick="setActive(this)">إكسسوارات</a>
-  <a href="#" class="nav-button" onclick="setActive(this)">إكترونيات</a>
-   <a href="#" class="nav-button" onclick="setActive(this)">آخر</a>
-   <a href="#" class="nav-button nav-other" onclick="setActive(this)">الجديد</a>
-   <main class="products">
+  <div class="nav-buttons">
+  <a href="#" class="nav-button active">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="فنايل">
+    <span>فنايل</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="بنطلونات">
+    <span>بنطلونات</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="جواكت">
+    <span>جواكت</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="شميزات">
+    <span>شميزات</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="معاوز">
+    <span>معاوز</span>
+  </a>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="شيلان">
+    <span>شيلان</span>
+  </a>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="اكسسوارات">
+    <span>اكسسوارات</span>
+  </a>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="احذية">
+    <span>احذية</span>
+  </a>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="آخر">
+    <span>آخر</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="آخر">
+    <span>آخر</span>
+  </a>
 </div>
   <main class="products">
     <!-- المنتج الأول -->
@@ -284,7 +450,7 @@ function setActive(element) {
       <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
       <p>السعر: 200 ريال</p>
       <div class="buttons">
-        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+        <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر">شراء</a>
         <button class="btn more" onclick="openModal(0)">تعرف أكثر</button>
       </div>
     </div>
@@ -296,7 +462,7 @@ function setActive(element) {
       <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
       <p>السعر: 2700 ريال</p>
       <div class="buttons">
-        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+     <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر">شراء</a>
         <button class="btn more" onclick="openModal(1)">تعرف أكثر</button>
       </div>
     </div>
@@ -308,7 +474,7 @@ function setActive(element) {
       <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
       <p>السعر: 200 ريال</p>
       <div class="buttons">
-        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+        <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر790">شراء</a>
         <button class="btn more" onclick="openModal(2)">تعرف أكثر</button>
       </div>
     </div>
@@ -320,7 +486,7 @@ function setActive(element) {
       <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
       <p>السعر: 200 ريال</p>
       <div class="buttons">
-        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
+        <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر790">شراء</a>
         <button class="btn more" onclick="openModal(3)">تعرف أكثر</button>
       </div>
     </div>
@@ -331,8 +497,8 @@ function setActive(element) {
       <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
       <p>السعر: 200 ريال</p>
       <div class="buttons">
-        <a class="btn buy" href="https://wa.me/967776849791?text=مرحباً، أود شراء فستان بنفسجي فاخر" target="_blank">شراء</a>
-        <button class="btn more" onclick="openModal(0)">تعرف أكثر</button>
+     <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر">شراء</a>
+     <button class="btn more" onclick="openModal(3)">تعرف أكثر</button>
       </div>
   </main>
 
@@ -486,5 +652,113 @@ function setActive(element) {
       }
     });
   </script>
+  <div id="orderForm" class="order-popup">
+  <div class="order-content">
+    <h3>طلب المنتج</h3>
+    <label>الاسم:</label>
+    <input type="text" id="customerName" placeholder="اكتب اسمك">
+    <label>المحافظة:</label>
+    <input type="text" id="customerLocation" placeholder="مثلاً صنعاء">
+    <label>العنوان:</label>
+    <input type="text" id="customerPhone" placeholder="أكتب العنوان ليتم توصيل المنتج">
+    <label>طريقة الدفع:</label>
+    <select id="paymentMethod">
+      <option value="كاش عند الاستلام">كاش عند الاستلام</option>
+      <option value="تحويل بنكي">تحويل بنكي</option>
+      <option value="محفظة إلكترونية">محفظة إلكترونية</option>
+    </select>
+    <div class="btns">
+  <button onclick="sendOrder()" class="btn-whatsapp">إرسال عبر الوتساب </button>
+  <button onclick="closeForm()" class="btn-cancel">إلغاء</button>
+</div>
+  </div>
+</div>
+
+<style>
+  .order-popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .order-popup.open {
+    display: flex;
+  }
+
+  .order-content {
+    background: #343434;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    direction: rtl;
+  }
+
+  .order-content label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .order-content input, .order-content select {
+    width: %;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #111111;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+
+  .btns button {
+    padding: 1px 17px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  function openForm(productTitle = "") {
+    document.getElementById("orderForm").classList.add("open");
+    window.currentProductTitle = productTitle; // حفظ اسم المنتج
+  }
+
+  function closeForm() {
+    document.getElementById("orderForm").classList.remove("open");
+  }
+
+  function sendOrder() {
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
+    const location = document.getElementById("customerLocation").value;
+    const payment = document.getElementById("paymentMethod").value;
+    const product = window.currentProductTitle || "منتج";
+
+    const message = `طلب منتج:\nالمنتج: ${product}\nالاسم: ${name}\nالمحافظة: ${location}\nالعنوان: ${phone}\nطريقة الدفع: ${payment}`;
+    const url = `https://wa.me/967776849791?text=${encodeURIComponent(message)}`; // غير الرقم إلى رقمك
+
+    window.open(url, "_blank");
+    closeForm();
+  }
+</script>
+<script>
+  const buyButtons = document.querySelectorAll('.btn.buy');
+
+  buyButtons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const productTitle = this.getAttribute('data-title');
+      openForm(productTitle);
+    });
+  });
+</script>
 </body>
 </html>
