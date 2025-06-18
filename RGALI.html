@@ -6,7 +6,33 @@
   <title>متجر سينور للأناقة</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-  .back-btn-inside {
+/* أنيميشن دخول للأزرار */
+.nav-button {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: nav-fade-in-up 0.7s forwards;
+}
+.nav-button:nth-child(1) { animation-delay: 0.08s; }
+.nav-button:nth-child(2) { animation-delay: 0.16s; }
+.nav-button:nth-child(3) { animation-delay: 0.24s; }
+.nav-button:nth-child(4) { animation-delay: 0.32s; }
+.nav-button:nth-child(5) { animation-delay: 0.40s; }
+.nav-button:nth-child(6) { animation-delay: 0.48s; }
+.nav-button:nth-child(7) { animation-delay: 0.56s; }
+.nav-button:nth-child(8) { animation-delay: 0.64s; }
+.nav-button:nth-child(9) { animation-delay: 0.72s; }
+.nav-button:nth-child(10) { animation-delay: 0.80s; }.nav-button:nth-child(6) { animation-delay: 0.48s; }
+
+.nav-button:nth-child(9) { animation-delay: 0.48s; }@keyframes nav-fade-in-up {
+  from { opacity: 0; transform: translateY(30px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* توهج خفيف عند الضغط */
+.nav-button:active {
+  box-shadow: 0 0 0 6px #a443ff33, 0 2px 8px #8A01FF44;
+  transition: box-shadow 0.18s;
+}  .back-btn-inside {
   background: rgba(130,130,130,0.16); /* رصاصي شفاف */
   border-radius: 50%;
   width: 46px;
