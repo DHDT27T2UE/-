@@ -30,7 +30,7 @@
 
 /* توهج خفيف عند الضغط */
 .nav-button:active {
-  box-shadow: 0 0 0 6px #a443ff33, 0 2px 8px #8A01FF44;
+  box-shadow: 0 0 0 12px #a443ff33, 0 2px 8px #8A01FF44;
   transition: box-shadow 0.18s;
 }  .back-btn-inside {
   background: rgba(130,130,130,0.16); /* رصاصي شفاف */
@@ -113,8 +113,8 @@
 }
 /*تعديل الصور التي داخل الازرار التي فوق*/
 .nav-icon {
-  width: 72px;
-  height: 92px;
+  width: 82px;
+  height: 102px;
   border-radius: 30%;
   object-fit: cover;
   margin-bottom: 1px;
@@ -141,7 +141,7 @@
       margin: 0;
     }
     .menu-icon {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       cursor: pointer;
     }
     .sidebar {
@@ -236,6 +236,29 @@
       background-color: #333333;
       color: white;
       width: 35%;
+      /*بوت أحمر........*/
+    }
+    .buttons1 {
+      display: flex;
+      justify-content: space-between;
+      gap: 4%;
+      margin-top: 0.3rem;
+    }
+    .btn1 {
+      padding: 0.25rem 0.4rem;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.63rem;
+      text-align: center;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    .buy1 {
+      font-weight: bold;
+      background-color: red;
+      color: white;
+      width: 67%;
     }
 
     /* نافذة منبثقة */
@@ -397,13 +420,13 @@
 
     /* ألوان مخصصة لكل زر قسم */
     .nav-button:nth-child(1) { background: #414141; } /* نسائي */
-    .nav-button:nth-child(2) { background: #8A01FF; } /* رجالي */
-    .nav-button:nth-child(3) { background: #8A01FF; } /* بناتي */
-    .nav-button:nth-child(4) { background: #8A01FF; } /* ولادي */
-    .nav-button:nth-child(5) { background: #8A01FF; } /* إلكترونيات */
-    .nav-button:nth-child(7) { background: #8A01FF; } /* آخر */
-.nav-button:nth-child(8) { background: #8A01FF; } /* آخر */.nav-button:nth-child(6) { background: #8A01FF; } /* آخر */
-.nav-button:nth-child(9) { background: #8A01FF; } /* آخر */.nav-button:nth-child(10) { background: #8A01FF; } /* آخر */
+    .nav-button:nth-child(2) { background: #8A01FFbb; } /* رجالي */
+    .nav-button:nth-child(3) { background: #8A01FFbb; } /* بناتي */
+    .nav-button:nth-child(4) { background: #8A01FFbb; } /* ولادي */
+    .nav-button:nth-child(5) { background: #8A01FFbb; } /* إلكترونيات */
+    .nav-button:nth-child(7) { background: #8A01FFbb; } /* آخر */
+.nav-button:nth-child(8) { background: #8A01FFbb; } /* آخر */.nav-button:nth-child(6) { background: #8A01FFbb; } /* آخر */
+.nav-button:nth-child(9) { background: #8A01FFbb; } /* آخر */.nav-button:nth-child(10) { background: #8A01FFbb; } /* آخر */
     /* ... أكواد CSS أخرى ... */
   </style>
 </head>
@@ -438,16 +461,68 @@
         filter: blur(20.2px);
       }
     }
+    .success-popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+.success-popup.open {
+  display: flex;
+}
+.success-content {
+  background: #232323;
+  color: #fff;
+  padding: 25px 20px 15px 20px;
+  border-radius: 15px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 0 12px #8A01FF44;
+  font-size: 1.05rem;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #8A01FF;
+  color: #fff;
+  border: none;
+  border-radius: 25%;
+  width: 42px;
+  height: 22px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 2;
+}
+.close-btn:hover {
+  background: #a443ff;
+}
   </style>
 </head>
 </head>
 <body>
-  
+  <div id="soldOutPopup" class="success-popup">
+  <div class="success-content">
+    <button class="close-btn" onclick="closeSoldOutPopup()">✖</button>
+    <p>المنتج منتهي الكمية (مباع بالكامل)</p>
+  </div>
+</div>
   <script>
 function setActive(element) {
   const buttons = document.querySelectorAll('.nav-button');
   buttons.forEach(btn => btn.classList.remove('active'));
   element.classList.add('active');
+}
+function showSoldOutPopup() {
+  document.getElementById('soldOutPopup').classList.add('open');
+}
+function closeSoldOutPopup() {
+  document.getElementById('soldOutPopup').classList.remove('open');
 }
 </script>
 
@@ -530,8 +605,8 @@ function setActive(element) {
       <h2>فستان أبيض فاخر</h2>
       <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
       <p>السعر: 2700 ريال</p>
-      <div class="buttons">
-     <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر">شراء</a>
+            <div class="buttons">
+        <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر">شراء</a>
         <button class="btn more" onclick="openModal(1)">تعرف أكثر</button>
       </div>
     </div>
@@ -565,8 +640,8 @@ function setActive(element) {
       <h2>فستادي فاخري</h2>
       <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
       <p>السعر: 200 ريال</p>
-      <div class="buttons">
-     <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر">شراء</a>
+     <div class="buttons1">
+     <a class="btn1 buy1" href="#" onclick="showSoldOutPopup(); return false;">تم البيع</a>
      <button class="btn more" onclick="openModal(3)">تعرف أكثر</button>
       </div>
   </main>
@@ -762,7 +837,7 @@ function setActive(element) {
     background: #343434;
     padding: 20px;
     border-radius: 10px;
-    width: 90%;
+    width: 75%;
     max-width: 400px;
     box-shadow: 0 0 10px rgba(0,0,0,0.3);
     direction: rtl;
@@ -774,8 +849,8 @@ function setActive(element) {
   }
 
   .order-content input, .order-content select {
-    width: %;
-    padding: 8px;
+    width: 70%;
+    padding: 6px;
     margin-top: 5px;
     border-radius: 6px;
     border: 1px solid #111111;
@@ -784,7 +859,7 @@ function setActive(element) {
   .btns {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 50px;
   }
 
   .btns button {
