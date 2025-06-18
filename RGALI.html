@@ -6,6 +6,24 @@
   <title>متجر سينور للأناقة</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+  .back-btn-inside {
+  background: rgba(130,130,130,0.16); /* رصاصي شفاف */
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  text-decoration: none;
+}
+.back-btn-inside:hover {
+  background: rgba(130,130,130,0.27);
+}
+.back-btn-inside svg {
+  display: block;
+}
   .btn.buy {
   position: relative;
   z-index: 1;
@@ -346,6 +364,23 @@
 
   </style>
 <head>
+  <head>
+
+  <style>
+    /* ... أكواد CSS أخرى ... */
+
+    /* ألوان مخصصة لكل زر قسم */
+    .nav-button:nth-child(1) { background: #414141; } /* نسائي */
+    .nav-button:nth-child(2) { background: #8A01FF; } /* رجالي */
+    .nav-button:nth-child(3) { background: #8A01FF; } /* بناتي */
+    .nav-button:nth-child(4) { background: #8A01FF; } /* ولادي */
+    .nav-button:nth-child(5) { background: #8A01FF; } /* إلكترونيات */
+    .nav-button:nth-child(7) { background: #8A01FF; } /* آخر */
+.nav-button:nth-child(8) { background: #8A01FF; } /* آخر */.nav-button:nth-child(6) { background: #8A01FF; } /* آخر */
+.nav-button:nth-child(9) { background: #8A01FF; } /* آخر */.nav-button:nth-child(10) { background: #8A01FF; } /* آخر */
+    /* ... أكواد CSS أخرى ... */
+  </style>
+</head>
   <style>
     /* CSS القديم حقك */
     ...
@@ -381,6 +416,7 @@
 </head>
 </head>
 <body>
+  
   <script>
 function setActive(element) {
   const buttons = document.querySelectorAll('.nav-button');
@@ -400,6 +436,13 @@ function setActive(element) {
     <a href="#">سياسة الخصوصية</a>
     <a href="#">عامية</a>
   </div>
+  <div style="text-align: left; margin: 18px 0 0 0;">
+  <a href="start.html" class="back-btn-inside" title="العودة">
+    <svg width="28" height="28" viewBox="0 0 32 32">
+      <polyline points="20,8 12,16 20,24" fill="none" stroke="#888" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </a>
+</div>
   <div class="nav-buttons">
   <a href="#" class="nav-button active">
     <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="فنايل">
