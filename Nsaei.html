@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>متجر سينور للأناقة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+  header {
+  background: linear-gradient(90deg, #8A01FF,);
+  color: #fff;
+  padding: 0.7rem 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  /* احذف أي border-radius آخر */
+}
+/* أنيميشن دخول للأزرار */
+.nav-button {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: nav-fade-in-up 0.7s forwards;
+}
+.nav-button:nth-child(1) { animation-delay: 0.08s; }
+.nav-button:nth-child(2) { animation-delay: 0.16s; }
+.nav-button:nth-child(3) { animation-delay: 0.24s; }
+.nav-button:nth-child(4) { animation-delay: 0.32s; }
+.nav-button:nth-child(5) { animation-delay: 0.40s; }
+.nav-button:nth-child(6) { animation-delay: 0.48s; }
+.nav-button:nth-child(7) { animation-delay: 0.56s; }
+.nav-button:nth-child(8) { animation-delay: 0.64s; }
+.nav-button:nth-child(9) { animation-delay: 0.72s; }
+.nav-button:nth-child(10) { animation-delay: 0.80s; }
+.nav-button:nth-child(11) { animation-delay: 0.88s; }
+
+.nav-button:nth-child(12) { animation-delay: 0.96s; }@keyframes nav-fade-in-up {
+  from { opacity: 0; transform: translateY(30px);}
+  to   { opacity: 1; transform: translateY(0);}
+}
+
+/* توهج خفيف عند الضغط */
+.nav-button:active {
+  box-shadow: 0 0 0 12px #a443ff33, 0 2px 8px #8A01FF44;
+  transition: box-shadow 0.18s;
+}  .back-btn-inside {
+  background: rgba(130,130,130,0.16); /* رصاصي شفاف */
+  border-radius: 50%;
+  width: 46px;
+  height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  text-decoration: none;
+}
+.back-btn-inside:hover {
+  background: rgba(130,130,130,0.27);
+}
+.back-btn-inside svg {
+  display: block;
+}
+  .btn.buy {
+  position: relative;
+  z-index: 1;
+  /* باقي ستايلك الأصلي يبقى كما هو */
+}
+
+/* التوهج المتحرك */
+.btn.buy::after {
+  content: "";
+  position: absolute;
+  inset: -4px;
+  border-radius: 10px;
+  z-index: -1;
+  background: radial-gradient(circle, #a443ff88 0%, #8A01FF44 60%, transparent 100%);
+  opacity: 0.8;
+  animation: btn-purple-glow 5.2s infinite alternate;
+  pointer-events: none;
+}
+
+@keyframes btn-purple-glow {
+  0% {
+    box-shadow: 0 0 6px 2px #8A01FF66, 0 0 14px 6px #8A01FF33;
+    opacity: 0.7;
+    filter: blur(1px);
+  }
+  100% {
+    box-shadow: 0 0 18px 7px #a443ffcc, 0 0 36px 14px #8A01FF55;
+    opacity: 1;
+    filter: blur(2.2px);
+  }
+}
+  .nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* صفين كل صف فيه زرين */
+  gap: 0.5rem;
+  padding: 0.5rem;
+  justify-items: center;
+}
+/*تعديل الازرار الي فوق*/
+.nav-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 125px;
+  background: #444;
+  color: #fff;
+  border-radius: 16px;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: background 0.3s;
+  box-shadow: 0 1px 4px #2223;
+}
+/*إلى هنا*/
+.nav-button:hover,
+.nav-button.active {
+  background: #8A01FF;
+  color: #fff;
+}
+/*تعديل الصور التي داخل الازرار التي فوق*/
+.nav-icon {
+  width: 82px;
+  height: 102px;
+  border-radius: 30%;
+  object-fit: cover;
+  margin-bottom: 1px;
+}
+  /*إلى هنا*/
+    body {
+      font-family: 'Cairo', sans-serif;
+      margin:0;
+      padding: 0;
+      background-color: #2f2f35;
+      color: #f2f2f2;
+      overflow-x: hidden;
+    }
+    header {
+      background-color: #8A01FF;
+      color: white;
+      padding: 0.6rem 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header h1 {
+      font-size: 1.5rem;
+      margin: 0;
+    }
+     header h {
+      font-size: 2.5rem;
+      margin: 0;
+    }
+    .menu-icon {
+      font-size: 1.4rem;
+      cursor: pointer;
+    }
+    .sidebar {
+      font-weight: bold;
+      position: fixed;
+      top: 0;
+      right: 0;
+      transform: translateX(100%);
+      width: 250px;
+      height: 100%;
+      background-color: #7301D3;
+      color: white;
+      transition: transform 0.3s ease;
+      padding: 1.5rem 1rem;
+      z-index: 1000;
+    }
+    .sidebar.open {
+      transform: translateX(0);
+    }
+    .sidebar a {
+      display: block;
+      margin: 1rem 0;
+      color: white;
+      text-decoration: none;
+      font-size: 1rem;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0.5rem;
+      padding: 0.7rem;
+      box-sizing: border-box;
+    }
+    .product {
+      background-color: #111111;
+      border-radius: 9px;
+      padding: 0.6rem;
+      text-align: center;
+      font-size: 0.85rem;
+    }
+    .product img {
+      width: 100%;
+      aspect-ratio: 3 / 4;
+      border-radius: 12px;
+      cursor: pointer;
+      max-height: 250px;
+      object-fit: cover;
+    }
+    .product h2 {
+      font-size: 0.8rem;
+      margin: 0.3rem 0 0.1rem 0;
+    }
+    .product .desc {
+      font-size: 0.65rem;
+      color: #d0cfe1;
+      margin-bottom: 0.3rem;
+      height: 6.2em;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      line-height: 1.4em;
+    }
+    .product p {
+      font-weight: bold;
+      margin: 0.6rem 0;
+      font-size: 0.8rem;
+      color: #white;
+    }
+    .buttons {
+      display: flex;
+      justify-content: space-between;
+      gap: 4%;
+      margin-top: 0.3rem;
+    }
+    .btn {
+      padding: 0.25rem 0.4rem;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.63rem;
+      text-align: center;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    .buy {
+      font-weight: bold;
+      background-color: #8A01FF;
+      color: white;
+      width: 67%;
+    }
+    .more {
+      font-family: 'Cairo', sans-serif;
+      background-color: #333333;
+      color: white;
+      width: 35%;
+      /*بوت أحمر........*/
+    }
+    .buttons1 {
+      display: flex;
+      justify-content: space-between;
+      gap: 4%;
+      margin-top: 0.3rem;
+    }
+    .btn1 {
+      padding: 0.25rem 0.4rem;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      font-size: 0.63rem;
+      text-align: center;
+      box-sizing: border-box;
+      text-decoration: none;
+    }
+    .buy1 {
+      font-weight: bold;
+      background-color: red;
+      color: white;
+      width: 67%;
+    }
+
+    /* نافذة منبثقة */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 93vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.7);
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+    }
+    .modal.open {
+      display: flex;
+    }
+    .modal-content {
+      background-color: #222;
+      border-radius: 10px;
+      max-width: 285px;
+      width: 100%;
+      padding: 2.0rem;
+      color: #eee;
+      text-align: center;
+      position: relative;
+    }
+    .close-btn {
+      position: absolute;
+      top: 0.4rem;
+      left: 0.4rem;
+      background: #8A01FF;
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      padding: 0 15px;
+    }
+    .modal-img-container {
+      position: relative;
+      margin: 1rem 0;
+    }
+    .modal-img-container img {
+      width: 100%;
+      border-radius: 8px;
+      aspect-ratio: 3 / 4;
+      user-select: none;
+      max-height: 350px;
+      object-fit: cover;
+    }
+    .arrow-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(138, 1, 255, 0.7);
+      border: none;
+      color: white;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 30%;
+      width: 35px;
+      height: 50px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      user-select: none;
+    }
+    .arrow-btn:hover {
+      background: #8A01FF;
+    }
+    .arrow-left {
+      right: 99%;
+      margin-right: 8px;
+    }
+    .arrow-right {
+      left: 99%;
+      margin-left: 8px;
+    }
+    .modal-description {
+      font-size: 0.8rem;
+      margin-top: 0.8rem;
+      color: #d0cfe1;
+      line-height: 1.4;
+    }
+    
+    <style>
+.nav-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.7rem;
+  padding: 1rem;
+}
+
+.nav-button {
+  background-color: #555;
+  color: white;
+  padding: 0.1rem 1rem;
+  text-align: center;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.nav-button:hover {
+  background-color: #333;
+}
+
+.nav-button.active {
+  background-color: #2c2c2c;
+}
+.nav-other {
+  background-color: #77c3aed; /* مثلاً لون بنفسجي */
+  color: white;
+}
+.btn-whatsapp {
+  font-family: 'Cairo', sans-serif;
+  background-color:#00963E;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-whatsapp:hover {
+  background-color:#00963E;
+}
+
+.btn-cancel {
+  font-family: 'Cairo', sans-serif;
+  background-color: #888;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+.btn-cancel:hover {
+  background-color: #666;
+}
+
+  </style>
+<head>
+  <head>
+
+  <style>
+    /* ... أكواد CSS أخرى ... */
+
+    /* ألوان مخصصة لكل زر قسم */
+    .nav-button:nth-child(1) { background: #414141; } /* نسائي */
+    .nav-button:nth-child(2) { background: #8A01FFbb; } /* رجالي */
+    .nav-button:nth-child(3) { background: #8A01FFbb; } /* بناتي */
+    .nav-button:nth-child(4) { background: #8A01FFbb; } /* ولادي */
+    .nav-button:nth-child(5) { background: #8A01FFbb; } /* إلكترونيات */
+    .nav-button:nth-child(6) { background: #8A01FFbb; } /* آخر */
+    .nav-button:nth-child(7) { background: #8A01FFbb; } /* آخر */
+.nav-button:nth-child(8) { background: #8A01FFbb; } /* آخر */
+.nav-button:nth-child(9) { background: #8A01FFbb; } /* آخر */
+.nav-button:nth-child(10) { background: #8A01FFbb; } /* آخر */
+.nav-button:nth-child(11) { background: #8A01FFbb; } /* آخر */
+.nav-button:nth-child(12) { background: #8A01FFbb; } /* آخر */
+.nav-button:nth-child(10) { background: #8A01FFbb; } /* آخر */
+
+    /* ... أكواد CSS أخرى ... */
+  </style>
+</head>
+  <style>
+    /* CSS القديم حقك */
+    ...
+    /* الآن أضف كود التوهج هنا */
+    .btn.buy::after {
+      content: "";
+      position: absolute;
+      inset: -2px;
+      border-radius: 5px;
+      z-index: -1;
+      background: radial-gradient(circle, #a443ff88 0%, #8A01FF44 60%, transparent 100%);
+      opacity: 0;
+      transition: opacity 10.3s;
+      pointer-events: none;
+    }
+    .btn.buy:hover::after, .btn.buy:focus::after {
+      opacity: 0.85;
+      animation: btn-purple-glow 10.2s infinite alternate;
+    }
+    @keyframes btn-purple-glow {
+      0% {
+        box-shadow: 0 0 6px 2px #8A01FF66, 0 0 14px 6px #8A01FF33;
+        opacity: 0.3;
+        filter: blur(0.5px);
+      }
+      100% {
+        box-shadow: 0 0 20px 2px #a443ffcc, 0 0 20px 11px #8A01FF55;
+        opacity: 1;
+        filter: blur(20.2px);
+      }
+    }
+    .success-popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: rgba(0,0,0,0.4);
+  justify-content: center;
+  align-items: center;
+  z-index: 3000;
+}
+.success-popup.open {
+  display: flex;
+}
+.success-content {
+  background: #232323;
+  color: #fff;
+  padding: 25px 20px 15px 20px;
+  border-radius: 15px;
+  max-width: 320px;
+  text-align: center;
+  box-shadow: 0 0 12px #8A01FF44;
+  font-size: 1.05rem;
+  position: relative;
+}
+.close-btn {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #8A01FF;
+  color: #fff;
+  border: none;
+  border-radius: 25%;
+  width: 42px;
+  height: 22px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 2;
+}
+.close-btn:hover {
+  background: #a443ff;
+}
+  </style>
+</head>
+</head>
+<body>
+  <div id="soldOutPopup" class="success-popup">
+  <div class="success-content">
+    <button class="close-btn" onclick="closeSoldOutPopup()">✖</button>
+    <p>المنتج منتهي الكمية (مباع بالكامل)</p>
+  </div>
+</div>
+  <script>
+function setActive(element) {
+  const buttons = document.querySelectorAll('.nav-button');
+  buttons.forEach(btn => btn.classList.remove('active'));
+  element.classList.add('active');
+}
+function showSoldOutPopup() {
+  document.getElementById('soldOutPopup').classList.add('open');
+}
+function closeSoldOutPopup() {
+  document.getElementById('soldOutPopup').classList.remove('open');
+}
+</script>
+
+  <header>
+    <h1>متجر توشن للأناقة</h1>
+    <div class="menu-icon" onclick="toggleSidebar()">☰</div>
+  </header>
+  <div class="sidebar" id="sidebar">
+    <a href="#">الصفحة الرئيسية</a>
+    <a href="#">منتجاتنا</a>
+    <a href="#"> تواصل بنا عبر وتساب</a>
+    <a href="#">سياسة الخصوصية</a>
+    <a href="#">عامية</a>
+  </div>
+  <div style="text-align: left; margin: 18px 0 0 0;">
+  <a href="start.html" class="back-btn-inside" title="العودة">
+    <svg width="28" height="28" viewBox="0 0 32 32">
+      <polyline points="20,8 12,16 20,24" fill="none" stroke="#888" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+  </a>
+</div>
+  <div class="nav-buttons">
+  <a href="#" class="nav-button active">
+    <img src="https://i.postimg.cc/66GjMPyv/image.jpg" class="nav-icon" alt="فنايل">
+    <span>فنايل</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/W318m9xh/image.jpg" class="nav-icon" alt="بنطلونات">
+    <span>بنطلونات</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/0QH2wnTR/image.jpg" class="nav-icon" alt="جواكت">
+    <span>جواكت</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/YSGYt5cN/image.jpg" class="nav-icon" alt="شميزات">
+    <span>شميزات</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/XJt2VfDq/image.jpg" class="nav-icon" alt="معاوز">
+    <span>معاوز</span>
+  </a>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/xTnvLpHY/image.jpg" class="nav-icon" alt="شيلان">
+    <span>شيلان</span>
+  </a>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/jSxd6mRH/image.jpg" class="nav-icon" alt="اكسسوارات">
+    <span>اكسسوارات</span>
+  </a>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/d1zL43Dg/image.jpg" class="nav-icon" alt="قبعات">
+    <span>قبعات</span>
+  </a>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/xC8GNXbm/image.jpg" class="nav-icon" alt="صنادل">
+    <span>صنادل</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/J4zy1fZy/image.jpg" class="nav-icon" alt="بواتي">
+    <span>بواتي</span>
+  </a>
+  <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="آخر">
+    <span>آخر</span>
+    <a href="#" class="nav-button">
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" class="nav-icon" alt="آخر">
+    <span>آخر</span>
+  </a>
+</div>
+  <main class="products">
+    <!-- المنتج الأول -->
+    <div class="product">
+      <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستان بنفسجي فاخر" />
+      <h2>فستان بنفسجي فاخر</h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
+      <p>السعر: 200 ريال</p>
+      <div class="buttons">
+        <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر">شراء</a>
+        <button class="btn more" onclick="openModal(0)">تعرف أكثر</button>
+      </div>
+    </div>
+
+    <!-- المنتج الثاني -->
+    <div class="product">
+      <img src="https://i.postimg.cc/FF6m9Qtp/image.jpg" alt="فستان أبيض فاخر" />
+      <h2>فستان أبيض فاخر</h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
+      <p>السعر: 2700 ريال</p>
+            <div class="buttons">
+        <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر">شراء</a>
+        <button class="btn more" onclick="openModal(1)">تعرف أكثر</button>
+      </div>
+    </div>
+
+    <!-- المنتج الثالث -->
+    <div class="product">
+      <img src="https://i.postimg.cc/25v0Gckw/O1-CN01lz-DEh-K2-JTKVdm-Ft-Qw-21211668309422-0-cib.jpg" alt="ترنج رياضي رجالي بخطوط على الاكمام" />
+      <h2>ترنج رياضي رجالي بخطوط على الاكمام</h2>
+      <div class="desc">المقاسات: M - L
+     <br>
+       <di="desc">لون: أسود ، قرمزي </div>
+       <s><h>15,000ر.ي</h></s>
+      <p>السعر الحالي: 12,000ر.ي</p>
+      <div class="buttons">
+        <a class="btn buy" href="#" data-title="ترنج رياضي رجالي بخطوط على الاكمام">شراء</a>
+        <button class="btn more" onclick="openModal(2)">تعرف أكثر</button>
+      </div>
+    </div>
+
+    <!-- المنتج الرابع -->
+    <div class="product">
+      <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستان بنفسجي فاخر" />
+      <h2> على فستان بنفسجي فاخر مطرز </h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو ال يمكن الطلب</div>
+      <p>السعر: 200 ريال</p>
+      <div class="buttons">
+        <a class="btn buy" href="#" data-title="فستان بنفسجي فاخر7908">شراء</a>
+        <button class="btn more" onclick="openModal(3)">تعرف أكثر</button>
+      </div>
+    </div>
+        <!-- المنتج الخامس -->
+    <div class="product">
+      <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستادي فاخر" />
+      <h2>فستادي فاخري</h2>
+      <div class="desc">فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب</div>
+      <p>السعر: 200 ريال</p>
+     <div class="buttons1">
+     <a class="btn1 buy1" href="#" onclick="showSoldOutPopup(); return false;">تم البيع</a>
+     <button class="btn more" onclick="openModal(3)">تعرف أكثر</button>
+      </div>
+  </main>
+
+  <!-- نافذة منبثقة -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <h2 id="modalTitle">فستان بنفسجي فاخر</h2>
+      <div class="modal-img-container">
+        <button class="arrow-btn arrow-left" id="prevImgBtn">&#9664;</button>
+        <img src="" alt="صورة المنتج" id="modalImage" />
+        <button class="arrow-btn arrow-right" id="nextImgBtn">&#9654;</button>
+      </div>
+      <p class="modal-description" id="modalDesc">
+        فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب
+      </p>
+      <p><strong>السعر:</strong> <span id="modalPrice">200 ريال</span></p>
+    </div>
+  </div>
+  
+  <!--2 نافذة منبثقة -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <h2 id="modalTitle">فستادي فاخر</h2>
+      <div class="modal-img-container">
+        <button class="arrow-btn arrow-left" id="prevImgBtn">&#9664;</button>
+        <img src="" alt="صورة المنتج" id="modalImage" />
+        <button class="arrow-btn arrow-right" id="nextImgBtn">&#9654;</button>
+      </div>
+      <p class="modal-description" id="modalDesc">
+        فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب
+      </p>
+      <p><strong>السعر:</strong> <span id="modalPrice">2090 ريال</span></p>
+    </div>
+  </div>
+  <!--3 نافذة منبثقة -->
+  <div class="modal" id="productModal">
+    <div class="modal-content">
+      <button class="close-btn" id="closeModalBtn">&times;</button>
+      <h2 id="modalTitle">فستنا أبيض فاخر</h2>
+      <div class="modal-img-container">
+        <button class="arrow-btn arrow-left" id="prevImgBtn">&#9664;</button>
+        <img src="" alt="صورة المنتج" id="modalImage" />
+        <button class="arrow-btn arrow-right" id="nextImgBtn">&#9654;</button>
+      </div>
+      <p class="modal-description" id="modalDesc">
+        فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب
+      </p>
+      <p><strong>السعر:</strong> <span id="modalPrice">200 ريال</span></p>
+    </div>
+  </div>
+  <script>
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+
+    const products = [
+      {
+        title: "فستادي فاخر",
+        desc: "فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب 7yy وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب",
+        price: "20,00 الف ريال",
+        images: [
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg"
+        ],
+      },
+      {
+        title: " فستان أبيض فاخر",
+        desc: "فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب",
+        price: "200 ريال",
+        images: [
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/FF6m9Qtp/image.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/FF6m9Qtp/image.jpg"
+        ],
+      },
+      {
+        title: "فستان بنفسجي فاخر",
+        desc: "فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب",
+        price: "200 ريال",
+        images: [
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg"
+        ],
+      },
+      {
+        title: "فستان بنفسجي فاخر",
+        desc: "فستان أنيق بتصميم ملكي يناسب الحفلات والمناسبات والاعراس كل على حسب الطلب وفي عت واتض نشو وسها مقاسات على كل الاعمال يمكن الطلب",
+        price: "200 ريال",
+        images: [
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg",
+          "https://i.postimg.cc/prDdq0jc/0005181.jpg"
+        ],
+      }
+    ];
+
+    let currentProductIndex = 0;
+    let currentImageIndex = 0;
+
+    const modal = document.getElementById('productModal');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDesc');
+    const modalPrice = document.getElementById('modalPrice');
+    const modalImage = document.getElementById('modalImage');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const prevImgBtn = document.getElementById('prevImgBtn');
+    const nextImgBtn = document.getElementById('nextImgBtn');
+
+    function openModal(productIndex) {
+      currentProductIndex = productIndex;
+      currentImageIndex = 0;
+      updateModalContent();
+      modal.classList.add('open');
+    }
+
+    function updateModalContent() {
+      const product = products[currentProductIndex];
+      modalTitle.textContent = product.title;
+      modalDesc.textContent = product.desc;
+      modalPrice.textContent = product.price;
+      modalImage.src = product.images[currentImageIndex];
+    }
+
+    closeModalBtn.addEventListener('click', () => {
+      modal.classList.remove('open');
+    });
+
+    prevImgBtn.addEventListener('click', () => {
+      const product = products[currentProductIndex];
+      currentImageIndex = (currentImageIndex - 1 + product.images.length) % product.images.length;
+      updateModalContent();
+    });
+
+    nextImgBtn.addEventListener('click', () => {
+      const product = products[currentProductIndex];
+      currentImageIndex = (currentImageIndex + 1) % product.images.length;
+      updateModalContent();
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        modal.classList.remove('open');
+      }
+    });
+  </script>
+<div id="orderForm" class="order-popup">
+  <div class="order-content">
+    <h3>طلب المنتج</h3>
+
+    <label>الاسم:</label>
+    <input type="text" id="customerName" placeholder="اكتب اسمك">
+
+    <label>المحافظة:</label>
+    <select id="customerLocation">
+      <option value="صنعاء">صنعاء</option>
+      <option value="عدن">عدن</option>
+      <option value="تعز">تعز</option>
+      <!-- أضف المزيد حسب الحاجة -->
+    </select>
+
+    <label>العنوان:</label>
+    <input type="text" id="customerPhone" placeholder="أكتب العنوان ليتم توصيل المنتج">
+
+    <label>طريقة الدفع:</label>
+    <select id="paymentMethod">
+      <option value="كاش عند الاستلام">كاش عند الاستلام</option>
+      <option value="تحويل بنكي">تحويل بنكي</option>
+      <option value="محفظة إلكترونية">محفظة إلكترونية</option>
+    </select>
+
+    <div class="btns">
+      <button class="btn-whatsapp" onclick="sendOrder()">إرسال عبر واتساب</button>
+      <button onclick="closeForm()" class="btn-cancel">إلغاء</button>
+    </div>
+  </div>
+</div>
+
+<style>
+  .order-popup {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  .order-popup.open {
+    display: flex;
+  }
+
+  .order-content {
+    background: #343434;
+    padding: 20px;
+    border-radius: 10px;
+    width: 75%;
+    max-width: 400px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    direction: rtl;
+  }
+
+  .order-content label {
+    display: block;
+    margin-top: 10px;
+  }
+
+  .order-content input, .order-content select {
+    width: 70%;
+    padding: 6px;
+    margin-top: 5px;
+    border-radius: 6px;
+    border: 1px solid #111111;
+  }
+
+  .btns {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+  }
+
+  .btns button {
+    padding: 1px 17px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+</style>
+<script>
+  function openForm(productTitle = "") {
+  document.getElementById("orderForm").classList.add("open");
+  window.currentProductTitle = productTitle; // حفظ اسم المنتج
+}
+function openForm(productTitle = "") {
+  document.getElementById("orderForm").classList.add("open");
+  window.currentProductTitle = productTitle;
+  console.log("تم اختيار المنتج:", productTitle); // للمراجعة
+}
+
+function closeForm() {
+  document.getElementById("orderForm").classList.remove("open");
+}
+
+function sendOrder() {
+  const name = document.getElementById("customerName").value;
+  const phone = document.getElementById("customerPhone").value;
+  const location = document.getElementById("customerLocation").value;
+  const payment = document.getElementById("paymentMethod").value;
+  const product = window.currentProductTitle || "منتج";
+
+  const message = `طلب منتج:\nالمنتج: ${product}\nالاسم: ${name}\nالمحافظة: ${location}\nالعنوان: ${phone}\nطريقة الدفع: ${payment}`;
+  const url = `https://wa.me/967776849791?text=${encodeURIComponent(message)}`; // غيّر الرقم حسب الحاجة
+
+  window.location.href = url; // ✅ هذا هو التغيير المهم
+  closeForm();
+}
+</script>
+<script>
+  const buyButtons = document.querySelectorAll('.btn.buy');
+
+  buyButtons.forEach(button => {
+    button.addEventListener('click', function (e) {
+      e.preventDefault();
+      const productTitle = this.getAttribute('data-title');
+      openForm(productTitle);
+    });
+  });
+</script>
+</body>
+</html>
