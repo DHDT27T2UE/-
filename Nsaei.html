@@ -935,9 +935,11 @@ function sendOrder() {
   const product = window.currentProductTitle || "منتج";
 
   const message = `طلب منتج:\nالمنتج: ${product}\nالاسم: ${name}\nالمحافظة: ${location}\nالعنوان: ${phone}\nطريقة الدفع: ${payment}`;
-  const url = `https://wa.me/967776849791?text=${encodeURIComponent(message)}`; // غيّر الرقم حسب الحاجة
+  const url = `https://wa.me/967776849791?text=${encodeURIComponent(message)}`;
 
-  window.location.href = url; // ✅ هذا هو التغيير المهم
+  // ✅ إرسال الرابط إلى التطبيق ليفتحه بنفسه
+  window.AppInventor.setWebViewString(url);
+
   closeForm();
 }
 </script>
