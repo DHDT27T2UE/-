@@ -98,20 +98,24 @@
   }
 
   function sendOrder() {
-    const name = document.getElementById("customerName").value;
-    const phone = document.getElementById("customerPhone").value;
-    const location = document.getElementById("customerLocation").value;
-    const payment = document.getElementById("paymentMethod").value;
-    const product = window.currentProductTitle || "منتج";
+  const name = document.getElementById("customerName").value;
+  const phone = document.getElementById("customerPhone").value;
+  const location = document.getElementById("customerLocation").value;
+  const payment = document.getElementById("paymentMethod").value;
+  const product = window.currentProductTitle || "منتج";
 
-    const message = `طلب منتج:\nالمنتج: ${product}\nالاسم: ${name}\nالمحافظة: ${location}\nالعنوان: ${phone}\nطريقة الدفع: ${payment}`;
-    const url = `https://wa.me/967776849791?text=${encodeURIComponent(message)}`;
+  const message = `طلب منتج:\nالمنتج: ${product}\nالاسم: ${name}\nالمحافظة: ${location}\nالعنوان: ${phone}\nطريقة الدفع: ${payment}`;
+  const url = `https://wa.me/967776849791?text=${encodeURIComponent(message)}`;
 
-    // ✅ أهم سطر لربط الموقع مع تطبيق Niotron
+  // ✅ نرسل الرابط إلى Niotron
+  if (window.AppInventor) {
     window.AppInventor.setWebViewString(url);
-
-    closeForm();
+  } else {
+    alert("AppInventor غير متوفر");
   }
+
+  closeForm();
+}
 
   const buyButtons = document.querySelectorAll('.btn.buy');
   buyButtons.forEach(button => {
