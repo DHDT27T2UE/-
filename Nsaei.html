@@ -88,33 +88,49 @@
 </div>
 
 <script>
+  // فتح نموذج الطلب مع حفظ اسم المنتج
   function openForm(productTitle = "") {
     document.getElementById("orderForm").classList.add("open");
     window.currentProductTitle = productTitle;
+    console.log("تم اختيار المنتج:", productTitle);
   }
 
+  // اغلاق النموذج
   function closeForm() {
     document.getElementById("orderForm").classList.remove("open");
   }
 
-  function sendOrder() {
-  const url = "https://wa.me/967776849791?text=مرحباً%20اريد%20الطلب";
-  if (window.AppInventor) {
-    window.AppInventor.setWebViewString(url);
-  } else {
-    alert("AppInventor غير متوفر");
-  }
-  closeForm();
-}
-
-  const buyButtons = document.querySelectorAll('.btn.buy');
-  buyButtons.forEach(button => {
-    button.addEventListener('click', function (e) {
-      e.preventDefault();
-      const productTitle = this.getAttribute('data-title');
-      openForm(productTitle);
+  // عند تحميل الصفحة، نربط جميع أزرار الشراء بالحدث
+  document.addEventListener("DOMContentLoaded", function() {
+    const buyButtons = document.querySelectorAll('.btn.buy');
+    buyButtons.forEach(button => {
+      button.addEventListener('click', function(e) {
+        e.preventDefault(); // لمنع الرابط الافتراضي
+        const productTitle = this.getAttribute('data-title');
+        openForm(productTitle);
+      });
     });
   });
+
+  function sendOrder() {
+    const name = document.getElementById("customerName").value;
+    const phone = document.getElementById("customerPhone").value;
+    const location = document.getElementById("customerLocation").value;
+    const payment = document.getElementById("paymentMethod").value;
+    const product = window.currentProductTitle || "منتج";
+
+    const message = `طلب منتج:\nالمنتج: ${product}\nالاسم: ${name}\nالمحافظة: ${location}\nالعنوان: ${phone}\nطريقة الدفع: ${payment}`;
+
+    // استخدم رابط واتساب بصيغة whatsapp://send
+    const url = `whatsapp://send?phone=+967776849791&text=${encodeURIComponent(message)}`;
+
+    if (window.AppInventor) {
+      window.AppInventor.setWebViewString(url);
+    } else {
+      alert("AppInventor غير متوفر");
+    }
+    closeForm();
+  }
 </script>
 
 </body>
