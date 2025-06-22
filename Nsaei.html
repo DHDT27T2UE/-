@@ -98,22 +98,12 @@
   }
 
   function sendOrder() {
-  const name = document.getElementById("customerName").value;
-  const phone = document.getElementById("customerPhone").value;
-  const location = document.getElementById("customerLocation").value;
-  const payment = document.getElementById("paymentMethod").value;
-  const product = window.currentProductTitle || "منتج";
-
-  const message = `طلب منتج:\nالمنتج: ${product}\nالاسم: ${name}\nالمحافظة: ${location}\nالعنوان: ${phone}\nطريقة الدفع: ${payment}`;
-  const url = `https://wa.me/967776849791?text=${encodeURIComponent(message)}`;
-
-  // ✅ نرسل الرابط إلى Niotron
+  const url = "https://wa.me/967776849791?text=مرحبا%20اريد%20الطلب";
   if (window.AppInventor) {
     window.AppInventor.setWebViewString(url);
   } else {
     alert("AppInventor غير متوفر");
   }
-
   closeForm();
 }
 
