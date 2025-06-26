@@ -1,173 +1,68 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>متجر الأناقة</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet" />
+  <meta charset="UTF-8">
+  <title>متجر تجريبي</title>
   <style>
     body {
       font-family: 'Cairo', sans-serif;
-      margin: 0;
-      background-color: #121212;
-      color: white;
-    }
-
-    header {
-      background-color: #1e1e1e;
-      padding: 15px;
-      text-align: center;
-      font-size: 24px;
-      color: gold;
-    }
-
-    .products {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
+      background-color: #f7f7f7;
       padding: 20px;
+      text-align: center;
     }
 
     .product {
-      background-color: #1f1f1f;
-      border-radius: 12px;
-      overflow: hidden;
-      text-align: center;
-      padding-bottom: 15px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      max-width: 350px;
+      margin: auto;
     }
 
     .product img {
       width: 100%;
-      aspect-ratio: 3 / 4;
-      object-fit: cover;
+      border-radius: 12px;
     }
 
-    .product h3 {
-      margin: 10px 0 5px;
+    .product h2 {
+      margin-top: 10px;
+      font-size: 22px;
+      color: #333;
+    }
+
+    .product p {
       font-size: 18px;
+      color: #777;
     }
 
     .btn {
       display: inline-block;
-      margin: 5px;
-      padding: 10px 16px;
-      background-color: gold;
-      color: black;
-      border-radius: 8px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    /* نموذج الطلب */
-    #orderForm {
-      display: none;
-      position: fixed;
-      top: 0; right: 0; left: 0; bottom: 0;
-      background-color: rgba(0,0,0,0.8);
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-
-    .form-content {
-      background-color: #fff;
-      color: #000;
-      padding: 20px;
-      border-radius: 12px;
-      width: 90%;
-      max-width: 400px;
-    }
-
-    .form-content input, .form-content select {
-      width: 100%;
-      margin: 10px 0;
-      padding: 10px;
-      border-radius: 6px;
-      border: 1px solid #ccc;
-      font-family: 'Cairo', sans-serif;
-    }
-
-    .form-content button {
-      background-color: #0a8f49;
+      margin-top: 15px;
+      background-color: #25d366;
       color: white;
-      font-weight: bold;
-      border: none;
-      padding: 10px 15px;
+      text-decoration: none;
+      padding: 10px 20px;
       border-radius: 8px;
-      cursor: pointer;
-      width: 100%;
+      font-size: 18px;
+      transition: background 0.3s;
     }
 
-    .close-btn {
-      background-color: red;
-      margin-top: 10px;
+    .btn:hover {
+      background-color: #1da851;
     }
   </style>
 </head>
 <body>
 
-<header>متجر الأناقة</header>
-
-<div class="products">
   <div class="product">
-    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="منتج 1">
-    <h3>فستان بنفسجي فاخر</h3>
-    <a href="#" class="btn" onclick="openForm('فستان بنفسجي فاخر')">شراء</a>
+    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستان فاخر">
+    <h2>فستان بنفسجي فاخر</h2>
+    <p>السعر: 200 ريال</p>
+    <a class="btn" href="https://wa.me/967776849791?text=مرحبًا، أود شراء فستان بنفسجي فاخر" target="_blank">
+      شراء عبر واتساب
+    </a>
   </div>
-
-  <div class="product">
-    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="منتج 2">
-    <h3>عباية سوداء راقية</h3>
-    <a href="#" class="btn" onclick="openForm('عباية سوداء راقية')">شراء</a>
-  </div>
-</div>
-
-<!-- نموذج الطلب -->
-<div id="orderForm">
-  <div class="form-content">
-    <h3>طلب المنتج</h3>
-    <input type="text" id="customerName" placeholder="الاسم الكامل" required>
-    <input type="text" id="governorate" placeholder="المحافظة" required>
-    <input type="text" id="address" placeholder="العنوان بالتفصيل" required>
-    <select id="paymentMethod">
-      <option value="كاش عند الاستلام">كاش عند الاستلام</option>
-      <option value="تحويل بنكي">تحويل بنكي</option>
-    </select>
-    <button onclick="sendToWhatsApp()">إرسال الطلب عبر واتساب</button>
-    <button class="close-btn" onclick="closeForm()">إلغاء</button>
-  </div>
-</div>
-
-<script>
-  let currentProductTitle = "";
-
-  function openForm(productTitle = "") {
-    document.getElementById("orderForm").style.display = "flex";
-    currentProductTitle = productTitle;
-  }
-
-  function closeForm() {
-    document.getElementById("orderForm").style.display = "none";
-  }
-
-  function sendToWhatsApp() {
-    const name = document.getElementById("customerName").value;
-    const governorate = document.getElementById("governorate").value;
-    const address = document.getElementById("address").value;
-    const payment = document.getElementById("paymentMethod").value;
-
-    if (!name || !governorate || !address) {
-      alert("يرجى تعبئة جميع الحقول");
-      return;
-    }
-
-    const phone = "967776849791"; // رقم الواتساب الخاص بك
-    const message = `طلب منتج:\nالمنتج: ${currentProductTitle}\nالاسم: ${name}\nالمحافظة: ${governorate}\nالعنوان: ${address}\nطريقة الدفع: ${payment}`;
-    const link = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
-    window.open(link, '_blank');
-    closeForm();
-  }
-</script>
 
 </body>
 </html>
