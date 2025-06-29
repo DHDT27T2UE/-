@@ -1,68 +1,75 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar">
 <head>
   <meta charset="UTF-8">
-  <title>متجر تجريبي</title>
+  <title>تسجيل الدخول - ToshStore</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js"></script>
   <style>
     body {
-      font-family: 'Cairo', sans-serif;
-      background-color: #f7f7f7;
-      padding: 20px;
+      font-family: 'Tahoma', sans-serif;
       text-align: center;
+      padding-top: 100px;
+      background: #f1f1f1;
     }
-
-    .product {
-      background-color: white;
-      border-radius: 16px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      padding: 20px;
-      max-width: 350px;
-      margin: auto;
-    }
-
-    .product img {
-      width: 100%;
-      border-radius: 12px;
-    }
-
-    .product h2 {
-      margin-top: 10px;
-      font-size: 22px;
-      color: #333;
-    }
-
-    .product p {
+    button {
+      padding: 12px 24px;
       font-size: 18px;
-      color: #777;
-    }
-
-    .btn {
-      display: inline-block;
-      margin-top: 15px;
-      background-color: #25d366;
+      border: none;
+      background: #4285F4;
       color: white;
-      text-decoration: none;
-      padding: 10px 20px;
       border-radius: 8px;
-      font-size: 18px;
-      transition: background 0.3s;
+      cursor: pointer;
+      margin-top: 20px;
     }
-
-    .btn:hover {
-      background-color: #1da851;
+    #userInfo {
+      margin-top: 30px;
+      font-size: 18px;
     }
   </style>
 </head>
 <body>
 
-  <div class="product">
-    <img src="https://i.postimg.cc/prDdq0jc/0005181.jpg" alt="فستان فاخر">
-    <h2>فستان بنفسجي فاخر</h2>
-    <p>السعر: 200 ريال</p>
-    <a class="btn" href="https://wa.me/967776849791?text=مرحبًا، أود شراء فستان بنفسجي فاخر" target="_blank">
-      شراء عبر واتساب
-    </a>
+  <h1>👋 مرحبًا بك في ToshStore</h1>
+  <button onclick="googleLogin()">🔵 تسجيل الدخول عبر Google</button>
+
+  <div id="userInfo" style="display:none;">
+    <p id="username"></p>
+    <button onclick="logout()">🚪 تسجيل الخروج</button>
   </div>
+
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDs5nes3-hAT5NksB6wbgAgj8WYsbMuE-g",
+      authDomain: "toshen-fd4b9.firebaseapp.com",
+      projectId: "toshen-fd4b9",
+      storageBucket: "toshen-fd4b9.firebasestorage.app",
+      messagingSenderId: "871450664004",
+      appId: "1:871450664004:web:9681cfad67e100d9f5f011",
+      measurementId: "G-5H040PFE52"
+    };
+
+    firebase.initializeApp(firebaseConfig);
+    const provider = new firebase.auth.GoogleAuthProvider();
+
+    function googleLogin() {
+      firebase.auth().signInWithPopup(provider)
+        .then((result) => {
+          const user = result.user;
+          document.getElementById("username").innerText = `✅ مرحبًا، ${user.displayName}`;
+          document.getElementById("userInfo").style.display = 'block';
+        })
+        .catch((error) => {
+          alert("❌ خطأ: " + error.message);
+        });
+    }
+
+    function logout() {
+      firebase.auth().signOut().then(() => {
+        document.getElementById("userInfo").style.display = 'none';
+      });
+    }
+  </script>
 
 </body>
 </html>
