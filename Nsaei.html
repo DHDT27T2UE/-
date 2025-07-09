@@ -455,6 +455,14 @@
     /* تمرير */
     ::-webkit-scrollbar {width:7px;background:#161624;}
     ::-webkit-scrollbar-thumb {background:#b085f552;border-radius:10px;}
+    }
+     .menu-icon {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 20px;
+      cursor: pointer;
+    
   </style>
 </head>
 <body>
@@ -470,8 +478,11 @@
     <div class="navbar-title">متجر توشن للأناقة</div>
     <!-- زر القائمة الجانبية أقصى اليسار -->
     <div class="navbar-left navbar-actions">
-      <button class="navbar-icon-btn" id="menu-btn" title="القائمة">
-        <span class="menu-lines">
+      <!--<button class="navbar-icon-btn" id="menu-btn" title="القائمة"-->
+        <!--span class="menu-lines"-->
+          
+            <button class="navbar-icon-btn" id="menu-btn" title="القائمة">
+            <div class="menu-icon" onclick="toggleSidebar()">☰</div>
           <span></span>
           <span></span>
           <span></span>
@@ -518,36 +529,41 @@
     </div>
     <div class="modal-body">
       <div style="color:#b085f5;font-weight:bold;margin-bottom:7px;" id="order-product-name"></div>
-      <form class="order-form" id="order-form">
-        <label>الاسم الكامل</label>
-        <input type="text" name="fullname" required autocomplete="name">
-        <label>رقم الهاتف</label>
-        <input type="tel" name="phone" required pattern="^(\+?\d{9,15})$" placeholder="">
-        <label>المحافظة</label>
-        <select name="state" required>
-          <option value="">اختيار المحافظة</option>
-          <option>صنعاء</option>
-          <option>عدن</option>
-          <option>الضالع</option>
-          <option>دمت</option>
-        </select>
-        <label>العنوان بالتفصيل</label>
-           <input type="text" name="address"
-          <required pattern="address" placeholder="مثال: شارع 25 شقة رقم 3">
-        <label>طريقة الدفع</label>
-        <select name="payment" required>
-          <option value="">اختيار طريقة الدفع</option>
-          <option>الدفع عند الاستلام</option>
-          <option>تحويل بنكي</option>
-        </select>
-        <label>ملاحظات إضافية</label>
-          <input type="text" name="note"
-          <required pattern="note" placeholder="مثال: أريد التوصيل غداً ظهراً، لأني اليوم مشغول">
-        <button type="button" class="gps-btn" onclick="getLocation()">تحديد الموقع الجغرافي</button>
-        <input type="hidden" name="location" id="order-location">
-        <div id="gps-status" style="font-size:0.97rem;color:#b085f5;"></div>
-        <button type="submit" class="submit-btn">إرسال الطلب</button>
-      </form>
+     <form class="order-form" id="order-form">
+  <label>الاسم الكامل</label>
+  <input type="text" id="order-name" name="fullname" required autocomplete="name">
+
+  <label>رقم الهاتف</label>
+  <input type="tel" id="order-phone" name="phone" required pattern="^(\+?\d{9,15})$" placeholder="">
+
+  <label>المحافظة</label>
+  <select id="order-governorate" name="state" required>
+    <option value="">اختيار المحافظة</option>
+    <option>صنعاء</option>
+    <option>عدن</option>
+    <option>الضالع</option>
+    <option>دمت</option>
+  </select>
+
+  <label>العنوان بالتفصيل</label>
+  <input type="text" id="order-address" name="address" placeholder="مثال: شارع 25 شقة رقم 3" required>
+
+  <label>طريقة الدفع</label>
+  <select id="order-payment-method" name="payment" required>
+    <option value="">اختيار طريقة الدفع</option>
+    <option>الدفع عند الاستلام</option>
+    <option>تحويل بنكي</option>
+  </select>
+
+  <label>ملاحظات إضافية</label>
+  <input type="text" id="order-notes" name="note" placeholder="مثال: أريد التوصيل غداً ظهراً، لأني اليوم مشغول">
+
+  <button type="button" class="gps-btn" onclick="getLocation()">تحديد الموقع الجغرافي</button>
+  <input type="hidden" id="order-location" name="location">
+  <div id="gps-status" style="font-size:0.97rem;color:#b085f5;"></div>
+
+  <button type="submit" class="submit-btn">إرسال الطلب</button>
+</form>
     </div>
   </div>
   <!-- نافذة تأكيد الطلب -->
@@ -735,11 +751,48 @@
 
     // ========== إرسال الطلب ==========
     document.getElementById('order-form').onsubmit = function(e){
-      e.preventDefault();
-      // إرسال للـ Google Sheets: (هنا فقط نموذج وهمي)
-      closeOrderModal();
-      openConfirmModal();
-    };
+  e.preventDefault();
+
+  const name = document.getElementById('order-name').value;
+  const phone = document.getElementById('order-phone').value;
+  const governorate = document.getElementById('order-governorate').value;
+  const address = document.getElementById('order-address').value;
+  const paymentMethod = document.getElementById('order-payment-method').value;
+  const notes = document.getElementById('order-notes').value || '';
+  const location = document.getElementById('order-location').value;
+
+  if (!location) {
+    document.getElementById('gps-status').textContent = 'يجب تحديد الموقع الجغرافي أولاً.';
+    return;
+  }
+
+  const payload = {
+    name,
+    phone,
+    governorate,
+    address,
+    paymentMethod,
+    notes,
+    location
+  };
+
+  fetch('https://script.google.com/macros/s/AKfycbx6UQsh1r8X6UsYzBafQfiiD1d9eimEhL0Oc8qfyapt-3mXwulmIwoQ-0WfEyt8eB-L/exec', {
+    method: 'POST',
+    body: JSON.stringify(payload),
+    headers: {
+      'Content-Type': 'application/json'
+    }
+  })
+  .then(res => res.text())
+  .then(result => {
+    closeOrderModal();
+    openConfirmModal();
+  })
+  .catch(err => {
+    alert("حدث خطأ أثناء إرسال الطلب. حاول مرة أخرى.");
+    console.error(err);
+  });
+};
 
     // ========== نافذة تأكيد الطلب ==========
     function openConfirmModal(){
@@ -754,23 +807,38 @@
     document.getElementById('confirm-modal-backdrop').onclick = closeConfirmModal;
 
     // ========== الموقع الجغرافي ==========
-    function getLocation(){
-      if (!navigator.geolocation){
-        document.getElementById('gps-status').textContent = 'المتصفح لا يدعم تحديد الموقع.';
-        return;
+   function getLocation(){
+  if (!navigator.geolocation){
+    document.getElementById('gps-status').textContent = 'المتصفح لا يدعم تحديد الموقع.';
+    return;
+  }
+
+  document.getElementById('gps-status').textContent = 'جاري تحديد الموقع...';
+
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      const loc = pos.coords.latitude + ',' + pos.coords.longitude;
+      document.getElementById('order-location').value = loc;
+      document.getElementById('gps-status').textContent = 'تم تحديد الموقع بنجاح ✅';
+    },
+    err => {
+      console.log(err);
+      if (err.code === 1) {
+        // تم رفض الصلاحية
+        document.getElementById('gps-status').textContent = 'يرجى تفعيل صلاحية الوصول إلى الموقع من المتصفح.';
+      } else if (err.code === 2 || err.code === 3) {
+        // GPS غير مفعّل أو فشل في تحديد الموقع
+        document.getElementById('gps-status').textContent = 'يرجى تشغيل الموقع (GPS) من إعدادات الهاتف ثم المحاولة مجددًا.';
+      } else {
+        document.getElementById('gps-status').textContent = 'تعذر تحديد الموقع. حاول مجددًا.';
       }
-      document.getElementById('gps-status').textContent = 'جاري التحديد...';
-      navigator.geolocation.getCurrentPosition(
-        pos=>{
-          const loc = pos.coords.latitude + ',' + pos.coords.longitude;
-          document.getElementById('order-location').value = loc;
-          document.getElementById('gps-status').textContent = 'تم التحديد!';
-        },
-        err=>{
-          document.getElementById('gps-status').textContent = 'تعذر تحديد الموقع.';
-        }
-      );
+    },
+    {
+      enableHighAccuracy: true,
+      timeout: 10000
     }
+  );
+}
 
     // ========== السلة ==========
     function getCart(){
