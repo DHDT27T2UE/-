@@ -753,13 +753,13 @@
     document.getElementById('order-form').onsubmit = function(e){
   e.preventDefault();
 
-  const name = document.getElementById('order-name').value;
-  const phone = document.getElementById('order-phone').value;
-  const governorate = document.getElementById('order-governorate').value;
-  const address = document.getElementById('order-address').value;
-  const paymentMethod = document.getElementById('order-payment-method').value;
-  const notes = document.getElementById('order-notes').value || '';
-  const location = document.getElementById('order-location').value;
+  const name = document.querySelector('input[name="fullname"]').value;
+const phone = document.querySelector('input[name="phone"]').value;
+const governorate = document.querySelector('select[name="state"]').value;
+const address = document.querySelector('input[name="address"]').value;
+const paymentMethod = document.querySelector('select[name="payment"]').value;
+const notes = document.querySelector('input[name="note"]').value || '';
+const location = document.getElementById('order-location').value;
 
   if (!location) {
     document.getElementById('gps-status').textContent = 'يجب تحديد الموقع الجغرافي أولاً.';
@@ -776,7 +776,7 @@
     location
   };
 
-  fetch('https://script.google.com/macros/s/AKfycbx6UQsh1r8X6UsYzBafQfiiD1d9eimEhL0Oc8qfyapt-3mXwulmIwoQ-0WfEyt8eB-L/exec', {
+  fetch('https://script.google.com/macros/s/AKfycbyyw1Q9MBKptgSxaLNJExv8hVYMTh7aKXDkUYldaCjOWVwCVA6gporN8SE5SBuvJfbvYQ/exec', {
     method: 'POST',
     body: JSON.stringify(payload),
     headers: {
