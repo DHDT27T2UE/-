@@ -750,7 +750,7 @@
     document.getElementById('order-modal-backdrop').onclick = closeOrderModal;
 
     // ========== إرسال الطلب ==========
-    document.getElementById('order').onsubmit = function(e){
+    document.getElementById('order-from').onsubmit = function(e){
   e.preventDefault();
 
   const name = document.querySelector('input[name="fullname"]').value;
