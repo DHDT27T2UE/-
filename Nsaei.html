@@ -496,7 +496,7 @@
     <button class="sidemenu-close-btn" id="close-sidemenu">&times;</button>
     <a href="#" onclick="closeSidemenu()">الرئيسية</a>
     <a href="#" onclick="openCartModal();closeSidemenu()">السلة</a>
-    <a href="#" onclick="alert('متجر عرب ستايل - أرقى المنتجات العربية.');closeSidemenu()">من نحن</a>
+    <a href="#" onclick="alert('متجر عرب ستايل - أرقى المنتجات العربية.');closeSidemenu()">من ننحن</a>
     <a href="mailto:arab.style.store@gmail.com" onclick="closeSidemenu()">تواصل معنا</a>
   </nav>
   <!-- شبكة المنتجات -->
@@ -542,7 +542,7 @@
     <option>صنعاء</option>
     <option>عدن</option>
     <option>الضالع</option>
-    <option>لحج</option>
+    <option>دمت</option>
   </select>
 
   <label>العنوان بالتفصيل</label>
@@ -750,7 +750,7 @@
     document.getElementById('order-modal-backdrop').onclick = closeOrderModal;
 
     // ========== إرسال الطلب ==========
-    document.getElementById('order-form').onsubmit = function(e){
+    document.getElementById('order').onsubmit = function(e){
   e.preventDefault();
 
   const name = document.querySelector('input[name="fullname"]').value;
