@@ -1,45 +1,45 @@
-<form id="form">
-  <input type="text" name="name" placeholder="الاسم" required>
-  <input type="text" name="phone" placeholder="رقم الهاتف" required>
-  <button type="submit">إرسال</button>
-</form>
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>نموذج إرسال</title>
+</head>
+<body>
 
-<div id="status">...</div>
+  <form id="form">
+    <input type="text" name="name" placeholder="الاسم" required>
+    <input type="text" name="phone" placeholder="رقم الهاتف" required>
+    <button type="submit">إرسال</button>
+  </form>
 
-<script>
-const form = document.getElementById('form');
-const statusDiv = document.getElementById('status');
+  <div id="status">...</div>
 
-form.onsubmit = function(e) {
-  e.preventDefault();
+  <script>
+    const form = document.getElementById('form');
+    const statusDiv = document.getElementById('status');
 
-  const name = form.name.value;
-  const phone = form.phone.value;
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
 
-  fetch("https://script.google.com/macros/s/AKfycbwlU6x6-bVEiCZ4ttDTaCtypfa51uGBCat4pFZWODz_s9_Dr_9s3kcH6GWxGjgjyktV/exec", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ name, phone })
-  })
-  .then(res => res.text())
-  .then(result => {
-    statusDiv.innerText = result;
+      const name = form.name.value.trim();
+      const phone = form.phone.value.trim();
 
-    // تحقق كل 5 ثواني من حالة القبول
-    setInterval(() => {
-      fetch(`https://script.google.com/macros/s/AKfycbwlU6x6-bVEiCZ4ttDTaCtypfa51uGBCat4pFZWODz_s9_Dr_9s3kcH6GWxGjgjyktV/exec?key=${phone}`)
-        .then(res => res.text())
-        .then(status => {
-          if (status === "تم القبول") {
-            statusDiv.innerText = "🎉 تم قبولك!";
-          } else {
-            statusDiv.innerText = "⏳ قيد المراجعة...";
-          }
-        });
-    }, 5000);
-  })
-  .catch(err => {
-    statusDiv.innerText = "❌ فشل في الإرسال: " + err;
-  });
-}
-</script>
+      fetch('https://script.google.com/macros/s/AKfycbwlU6x6-bVEiCZ4ttDTaCtypfa51uGBCat4pFZWODz_s9_Dr_9s3kcH6GWxGjgjyktV/exec', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name, phone })
+      })
+      .then(res => res.text())
+      .then(responseText => {
+        statusDiv.textContent = responseText;
+      })
+      .catch(err => {
+        statusDiv.textContent = '❌ فشل في الإرسال: ' + err.message;
+      });
+    });
+  </script>
+
+</body>
+</html>
